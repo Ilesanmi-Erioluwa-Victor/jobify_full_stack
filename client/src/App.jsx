@@ -2,7 +2,7 @@
 const App = () => {
   return (
     <h1>
-      JOBIFY APP
+      Jobify App
     </h1>
   )
 }
