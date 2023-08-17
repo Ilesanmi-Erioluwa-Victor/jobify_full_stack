@@ -1,5 +1,12 @@
-const Register = () => {
-  return <div>Register</div>;
-}
+import { Link } from 'react-router-dom';
 
-export default Register
+const Register = () => {
+  return (
+    <div>
+      Register
+      <Link to={'/login'}>Login to your Account</Link>
+    </div>
+  );
+};
+
+export default Register;
