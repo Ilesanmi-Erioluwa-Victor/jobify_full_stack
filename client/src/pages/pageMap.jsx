@@ -12,7 +12,7 @@ import {
   Register,
   Profile,
   Stats,
-} from './index';
+} from './';
 
 export const pageMap = [
   {
