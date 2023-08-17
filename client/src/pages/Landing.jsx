@@ -1,4 +1,5 @@
 import Wrapper from 'assets/wrappers/LandingPage';
+import main from 'assets/images/man.svg';
 
 const Landing = () => {
   return (
