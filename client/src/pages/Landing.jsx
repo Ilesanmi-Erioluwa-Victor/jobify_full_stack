@@ -1,6 +1,7 @@
 import Wrapper from 'assets/wrappers/LandingPage';
 import main from 'assets/images/main.svg';
 import logo from 'assets/images/logo.svg';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
@@ -24,6 +25,8 @@ const Landing = () => {
             temporibus sapiente sunt debitis molestias autem iusto
             necessitatibus at eveniet aspernatur perspiciatis quos.
           </p>
+
+          <Link to={"/register"} className='btn register-link'>Register</Link>
         </div>
       </div>
     </Wrapper>
