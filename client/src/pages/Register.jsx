@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
-    <h1>
-      Register
+    <div>
+      <h1>Register</h1>
       <Link to={'/login'}>Login to your Account</Link>
-    </h1>
+    </div>
   );
 };
 
