@@ -26,7 +26,19 @@ const Landing = () => {
             necessitatibus at eveniet aspernatur perspiciatis quos.
           </p>
 
-          <Link to={"/register"} className='btn register-link'>Register</Link>
+          <Link
+            to={'/register'}
+            className='btn register-link'
+          >
+            Register
+          </Link>
+
+          <Link
+            to={'/login'}
+            className='btn'
+          >
+            Login
+          </Link>
         </div>
       </div>
     </Wrapper>
