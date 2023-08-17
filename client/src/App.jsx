@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <h1>Jobify App</h1>;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
