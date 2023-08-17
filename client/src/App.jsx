@@ -19,17 +19,17 @@ import {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: < HomeLayout/>,
+    element: <HomeLayout />,
   },
 
   {
     path: '/register',
-    element: <h1>Home Page</h1>,
+    element: <Register />,
   },
 
   {
-    path: '/about',
-    element: <h1>About Us Page</h1>,
+    path: '/login',
+    element: <Login />,
   },
 
   {
