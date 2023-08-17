@@ -2,10 +2,8 @@ import { Outlet } from 'react-router';
 const HomeLayout = () => {
   return (
     <div>
-      <h1>HomeLayout</h1>
-      <h2>
-        <Outlet />
-      </h2>
+      <nav>Nav.Bar !!!</nav>
+      <Outlet />
     </div>
   );
 };
