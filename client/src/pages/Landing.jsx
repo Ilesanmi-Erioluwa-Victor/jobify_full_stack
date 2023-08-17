@@ -5,7 +5,6 @@ import logo from 'assets/images/logo.svg';
 const Landing = () => {
   return (
     <Wrapper>
-
       <nav>
         <img
           src={logo}
@@ -14,12 +13,19 @@ const Landing = () => {
         />
       </nav>
 
-      <div className="container page">
-        <div className="info">
-          <h1>Job <span>tracking</span> app</h1>
+      <div className='container page'>
+        <div className='info'>
+          <h1>
+            Job <span>tracking</span> app
+          </h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum
+            facilis culpa laborum repellat placeat blanditiis, illo quo,
+            temporibus sapiente sunt debitis molestias autem iusto
+            necessitatibus at eveniet aspernatur perspiciatis quos.
+          </p>
         </div>
       </div>
-
     </Wrapper>
   );
 };
