@@ -18,5 +18,11 @@ export const pageMap = [
   {
     path: '/',
     render: HomeLayout,
+    children: [
+      {
+        path: 'register',
+        renderChild: Register,
+      },
+    ],
   },
 ];
