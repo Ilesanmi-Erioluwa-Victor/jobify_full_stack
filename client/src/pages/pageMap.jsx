@@ -23,6 +23,16 @@ export const pageMap = [
         path: 'register',
         renderChild: Register,
       },
+
+      {
+        path: 'login',
+        renderChild: Login,
+      },
+
+      {
+        path: 'dashboard',
+        renderChild: DashboardLayout,
+      },
     ],
   },
 ];
