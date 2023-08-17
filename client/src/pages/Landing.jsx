@@ -37,9 +37,11 @@ const Landing = () => {
             to={'/login'}
             className='btn'
           >
-            Login
+            Login / Demo user
           </Link>
         </div>
+
+        <img src={main} alt="Job hunt" className='img main-img'/>
       </div>
     </Wrapper>
   );
