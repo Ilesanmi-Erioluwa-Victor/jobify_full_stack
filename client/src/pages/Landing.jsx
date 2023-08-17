@@ -16,7 +16,7 @@ const Landing = () => {
 
       <div className="container page">
         <div className="info">
-          <h1>Job <span>tracking</span></h1>
+          <h1>Job <span>tracking</span> app</h1>
         </div>
       </div>
 
