@@ -33,7 +33,7 @@ const Login = () => {
         </button>
         <p>Not yet a member ? 
 
-          <Link to={"register"}>register</Link>
+          <Link to={"register"} className='member-btn'>register</Link>
         </p>
       </form>
     </Wrapper>
