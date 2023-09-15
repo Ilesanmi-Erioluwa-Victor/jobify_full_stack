@@ -23,7 +23,7 @@ const Error = () => {
   return (
     <Wrapper>
       <div>
-        <h3>Ohh page not fo</h3>
+        <h3>Ohh page not found</h3>
       </div>
     </Wrapper>
   );
