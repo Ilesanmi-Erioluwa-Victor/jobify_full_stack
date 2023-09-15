@@ -36,7 +36,7 @@ const Register = () => {
         <FormRow
           type={'password'}
           name={'password'}
-          defaultValue={'Erioluwa'}
+          defaultValue={'12345'}
         />
 
         <button
