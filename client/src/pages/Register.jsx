@@ -22,6 +22,9 @@ const Register = () => {
           />
         </div>
         <button className="btn btn-block" type='submit'>submit</button>
+        <p>Already a member ? 
+          <Link to={"/login"} className='member-btn'>Login</Link>
+        </p>
       </form>
     </Wrapper>
   );
