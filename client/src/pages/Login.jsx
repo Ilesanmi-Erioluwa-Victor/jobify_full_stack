@@ -31,6 +31,10 @@ const Login = () => {
         >
          explore the app
         </button>
+        <p>Not yet a member ? 
+
+          <Link to={"register"}>register</Link>
+        </p>
       </form>
     </Wrapper>
   );
