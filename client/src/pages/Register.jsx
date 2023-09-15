@@ -7,21 +7,7 @@ const Register = () => {
     <Wrapper>
       <form className='form'>
         <Logo />
-        <div className='form-row'>
-          <label
-            htmlFor='name'
-            className='form-label'
-          >
-            name
-          </label>
-          <input
-            type='text'
-            id='name'
-            name='name'
-            className='form-input'
-            defaultValue={"Erioluwa"}
-          />
-        </div>
+       
         <button className="btn btn-block" type='submit'>submit</button>
         <p>Already a member ? 
           <Link to={"/login"} className='member-btn'>Login</Link>
