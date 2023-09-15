@@ -19,6 +19,18 @@ const Login = () => {
           name={'password'}
           defaultValue={'ericjay1452@gmail.com'}
         />
+        <button
+          type='submit'
+          className='btn btn-block'
+        >
+          submit{' '}
+        </button>
+        <button
+          type='button'
+          className='btn btn-block'
+        >
+         explore the app
+        </button>
       </form>
     </Wrapper>
   );
