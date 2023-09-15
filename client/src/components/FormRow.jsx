@@ -1,23 +1,22 @@
-
-const FormRow = ({type, name, labelText, defaultValue}) => {
+const FormRow = ({ type, name, labelText, defaultValue }) => {
   return (
     <div className='form-row'>
       <label
         htmlFor={name}
         className='form-label'
       >
-       {labelText || name}
+        {labelText || name}
       </label>
       <input
         type={type}
         id={name}
         name={name}
         className='form-input'
-        defaultValue={defaultValue}
+        defaultValue={defaultValue || ''}
         required
       />
     </div>
   );
-}
+};
 
-export default FormRow
+export default FormRow;
