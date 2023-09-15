@@ -5,8 +5,10 @@ import { Logo } from "../components"
 const Register = () => {
   return (
     <Wrapper>
-      <form className="form"></form>
-      <h1>Register</h1>
+      <form className='form'>
+        <Logo />
+        <h1>Register</h1>
+      </form>
     </Wrapper>
   );
 };
