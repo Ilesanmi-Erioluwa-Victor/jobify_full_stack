@@ -18,8 +18,10 @@ const Register = () => {
             type='text'
             id='name'
             name='name'
+            className='form-input'
           />
         </div>
+        <button className="btn btn-block" type='submit'>submit</button>
       </form>
     </Wrapper>
   );
