@@ -7,7 +7,11 @@ const Register = () => {
     <Wrapper>
       <form className='form'>
         <Logo />
-        <h1>Register</h1>
+        <div className="form-row">
+          <label htmlFor="name" className='form-label'>
+            name
+          </label>
+       </div>
       </form>
     </Wrapper>
   );
