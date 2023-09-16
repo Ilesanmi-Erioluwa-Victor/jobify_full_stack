@@ -18,7 +18,7 @@ app.post('/', (req, res, next) => {
   console.log(req);
 });
 
-const PORT = 8080;
-app.listen(PORT || 8080, () => {
+const PORT = process.env.PORT || 8081;
+app.listen(PORT, () => {
   console.log('server running on :', PORT);
 });
