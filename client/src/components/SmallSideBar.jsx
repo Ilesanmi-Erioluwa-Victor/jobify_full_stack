@@ -3,6 +3,7 @@ import { useDashboardContext } from 'pages/DashboardLayout';
 import { FaTimes } from 'react-icons/fa';
 import Logo from './Logo';
 import links from 'utils/Links';
+import { NavLink } from 'react-router-dom';
 
 const SmallSidebar = () => {
   const data = useDashboardContext();
@@ -20,8 +21,13 @@ const SmallSidebar = () => {
           <header>
             <Logo />
           </header>
-          <div className="nav-links">
+          <div className='nav-links'>
             {links.map((link) => {
+              const { text, path, icon } = link;
+              return <NavLink to={path} key={text} className={"nav-link"} >
+                <span className="icon">{icon}</span>
+                {text}
+              </NavLink>
               
             })}
           </div>
