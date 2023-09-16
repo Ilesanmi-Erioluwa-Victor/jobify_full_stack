@@ -4,7 +4,7 @@ import links from 'utils/Links';
 import { useDashboardContext } from 'pages/DashboardLayout';
 
 const NavLinks = () => {
-  const {toggleSidebar} = useDashboardContext();
+  const { toggleSidebar } = useDashboardContext();
 
   return (
     <div className='nav-links'>
@@ -17,7 +17,9 @@ const NavLinks = () => {
             key={text}
             className={'nav-link'}
             onClick={toggleSidebar}
-          ></NavLink>
+          >
+            <span className='icon'>{icon}</span>
+          </NavLink>
         );
       })}
     </div>
