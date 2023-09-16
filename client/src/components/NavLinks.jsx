@@ -19,6 +19,7 @@ const NavLinks = () => {
             onClick={toggleSidebar}
           >
             <span className='icon'>{icon}</span>
+            {text}
           </NavLink>
         );
       })}
