@@ -9,6 +9,15 @@ const DashboardLayout = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
+  const toggleDarkTheme = () => {
+    
+  }
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar)
+  }
+
+  
   return (
     <Wrapper>
       <main className='dashboard'>
