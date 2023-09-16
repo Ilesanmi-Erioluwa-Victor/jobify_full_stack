@@ -17,7 +17,10 @@ const DashboardLayout = () => {
     setShowSidebar(!showSidebar)
   }
 
-  
+  const loggedoutUser = async () => {
+    
+  }
+
   return (
     <Wrapper>
       <main className='dashboard'>
