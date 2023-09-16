@@ -19,7 +19,7 @@ const DashboardLayout = () => {
   const loggedoutUser = async () => {};
 
   return (
-    <DashboardContext.Provider value={{user, showSidebar, isDarkTheme}}>
+    <DashboardContext.Provider value={{user, showSidebar, isDarkTheme, toggleDarkTheme, toggleSidebar, loggedoutUser}}>
       <Wrapper>
         <main className='dashboard'>
           <SmallSidebar />
