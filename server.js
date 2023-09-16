@@ -6,8 +6,9 @@ dotenv.config();
 
 const app = express();
 
+process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
+
 app.use(express.json());
-app.use(morgan('dev'));
 
 app.get('/', (req, res, next) => {
   res.send('Hello world');
