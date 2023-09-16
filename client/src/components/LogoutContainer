@@ -8,7 +8,16 @@ import { useDashboardContext } from '../pages/DashboardLayout';
 const LogoutContainer = () => {
   const [showLogout, setShowLogout] = useState(false);
   const { user, logoutUser } = useDashboardContext();
-  return <div>LogoutContainer</div>;
+
+  return (
+    <Wrapper>
+      <button
+        type='button'
+        className='btn logout-btn'
+        onClick={() => setShowLogout(!showLogout)}
+      ></button>
+    </Wrapper>
+  );
 };
 
 export default LogoutContainer;
