@@ -20,9 +20,9 @@ const NavBar = () => {
         <div>
           <Logo />
           <h4 className='logo-text'>Dashboard</h4>
-          <div className='btn-container'>
-            <LogoutContainer />
-          </div>
+        </div>
+        <div className='btn-container'>
+          <LogoutContainer />
         </div>
       </div>
     </Wrapper>
