@@ -3,6 +3,8 @@ import Wrapper from 'assets/wrappers/Dashboard';
 import { SmallSidebar, BigSidebar, Navbar } from 'components';
 
 const DashboardLayout = () => {
+
+  
   return (
     <Wrapper>
       <main className='dashboard'>
