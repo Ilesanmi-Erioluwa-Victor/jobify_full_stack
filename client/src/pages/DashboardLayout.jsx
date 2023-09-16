@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useContext } from 'react';
 import { Outlet } from 'react-router';
 import Wrapper from 'assets/wrappers/Dashboard';
 import { SmallSidebar, BigSidebar, Navbar } from 'components';
@@ -19,7 +19,16 @@ const DashboardLayout = () => {
   const loggedoutUser = async () => {};
 
   return (
-    <DashboardContext.Provider value={{user, showSidebar, isDarkTheme, toggleDarkTheme, toggleSidebar, loggedoutUser}}>
+    <DashboardContext.Provider
+      value={{
+        user,
+        showSidebar,
+        isDarkTheme,
+        toggleDarkTheme,
+        toggleSidebar,
+        loggedoutUser,
+      }}
+    >
       <Wrapper>
         <main className='dashboard'>
           <SmallSidebar />
@@ -36,5 +45,7 @@ const DashboardLayout = () => {
     </DashboardContext.Provider>
   );
 };
+
+export const useDashboardContext = () => useContext(DashboardContext);
 
 export default DashboardLayout;
