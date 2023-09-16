@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import links from 'utils/Links';
 
-const { useDashboardContext } = require('pages/DashboardLayout');
+import { useDashboardContext } from 'pages/DashboardLayout';
 
 const NavLinks = () => {
+  const {toggleSidebar} = useDashboardContext();
+
   return (
     <div className='nav-links'>
       {links.map((link) => {
@@ -14,6 +16,7 @@ const NavLinks = () => {
             to={path}
             key={text}
             className={'nav-link'}
+            onClick={toggleSidebar}
           ></NavLink>
         );
       })}
