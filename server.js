@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
-import { nanoid } from "nanoid"
+import { nanoid } from 'nanoid';
 
 let jobs = [
   {
@@ -31,9 +31,9 @@ app.post('/', (req, res, next) => {
   console.log(req);
 });
 
-app.get("/api/v1/jobs", (req. res, next) => {
-  
-})
+app.get('/api/v1/jobs', (req, res, next) => {
+  res.json({ status: 'success', message: 'ok', data: jobs });
+});
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log('server running on : PORT', PORT);
