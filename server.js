@@ -9,5 +9,5 @@ app.get("/", (req, res, next) =>{
 const PORT = 8080
 
 app.listen(PORT || 8080, () =>{
-    console.log("server running on +", PORT)
+    console.log("server running on :", PORT)
 })
