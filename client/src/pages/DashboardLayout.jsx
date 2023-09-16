@@ -1,10 +1,16 @@
 import { Outlet } from 'react-router';
+import Wrapper from 'assets/wrappers/Dashboard';
+import { SmallSideBar, BigSideBar } from 'components';
 
 const DashboardLayout = () => {
   return (
-    <div>
+    <Wrapper>
+      <main className='dashboard'>
+        <SmallSideBar />
+        <BigSideBar />
+      </main>
       <Outlet />
-    </div>
+    </Wrapper>
   );
 };
 
