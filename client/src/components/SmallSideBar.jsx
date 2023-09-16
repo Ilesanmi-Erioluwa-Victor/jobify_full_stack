@@ -3,8 +3,16 @@ import { useDashboardContext } from 'pages/DashboardLayout';
 
 const SmallSidebar = () => {
   const data = useDashboardContext();
-  console.log(data)
-  return <Wrapper>SmallSideBar</Wrapper>;
+
+  return <Wrapper>
+    <div className="sidebar-container show-sidebar">
+      <div className="content">
+        <button type="button" className="close-btn">
+
+        </button>
+   </div>
+    </div>
+  </Wrapper>;
 };
 
 export default SmallSidebar;
