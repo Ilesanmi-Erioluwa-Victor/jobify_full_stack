@@ -1,7 +1,7 @@
 import Wrapper from 'assets/wrappers/SmallSidebar';
 
-const SmallSideBar = () => {
+const SmallSidebar = () => {
   return <Wrapper>SmallSideBar</Wrapper>;
 };
 
-export default SmallSideBar;
+export default SmallSidebar;
