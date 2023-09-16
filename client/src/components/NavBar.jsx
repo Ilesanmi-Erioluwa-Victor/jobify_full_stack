@@ -1,12 +1,20 @@
 import Wrapper from 'assets/wrappers/Navbar';
-import { FaHome } from 'react-icons/fa';
+import { FaAlignLeft } from 'react-icons/fa';
+import Logo from './Logo';
 Wrapper;
 
 const NavBar = () => {
   return (
     <Wrapper>
-      <h2>navbar</h2>
-      <FaHome />
+      <div className="nav-center">
+        <button className="toggle-btn">
+          <FaAlignLeft />
+        </button>
+
+        <div>
+          <Logo />
+        </div>
+     </div>
     </Wrapper>
   );
 };
