@@ -4,11 +4,17 @@ import Wrapper from 'assets/wrappers/Dashboard';
 import { SmallSidebar, BigSidebar, Navbar } from 'components';
 
 const DashboardContext = createContext();
+
+const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+  document.body.classList.toggle('dark-theme', isDarkTheme);
+  return isDarkTheme;
+};
 const DashboardLayout = () => {
   const user = { name: 'John' };
 
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme);
 
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
