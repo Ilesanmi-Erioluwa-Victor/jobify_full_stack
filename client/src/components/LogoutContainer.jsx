@@ -15,7 +15,9 @@ const LogoutContainer = () => {
         type='button'
         className='btn logout-btn'
         onClick={() => setShowLogout(!showLogout)}
-      ></button>
+          >
+              
+      </button>
     </Wrapper>
   );
 };
