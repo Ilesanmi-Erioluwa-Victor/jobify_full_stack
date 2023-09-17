@@ -39,29 +39,7 @@ app.delete('/api/v1/jobs/:id', (req, res, next) => {
 });
 
 // EDIT JOB
-app.patch('/api/v1/jobs/:id', (req, res, next) => {
-  const { id } = req.params;
-  const { position, company } = req.body;
-
-  if (!company || !position) {
-    return res.status(400).json({
-      status: 'failed',
-      msg: 'Please, provide all the required fields',
-    });
-  }
-
-  const job = jobs.find((job) => job.id === id);
-
-  if (!job) {
-    return res.status(404).json({
-      status: 'fail',
-      message: `No job found with this ID : ${id}`,
-    });
-  }
-  job.company = company;
-  job.position = position;
-  res.json({ status: 'success', message: 'ok', data: job });
-});
+app.patch('/api/v1/jobs/:id', );
 
 // CREATE JOB
 app.post('/api/v1/jobs', );
