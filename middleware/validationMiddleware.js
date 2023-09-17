@@ -2,6 +2,7 @@ import { body, param, validationResult } from 'express-validator';
 import { BadRequestError } from '../errors/customError.js';
 import { JOB_STATUS, JOB_TYPE } from '../utils/constant.js';
 import mongoose from 'mongoose';
+import Job from '../models/jobModel.js';
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -37,10 +38,10 @@ export const validateJobInput = withValidationErrors([
 ]);
 
 export const validateParam = withValidationErrors([
-  param('id')
-    .custom(async (value) => {
-      const isValidId = mongoose.Types.ObjectId.isValid(value);
-      if (!isValidId) throw new BadRequestError('invalid MongoDB id');
-    })
-    .withMessage('invalid MongoDB id'),
+  param('id').custom(async (value) => {
+    const isValidId = mongoose.Types.ObjectId.isValid(value);
+    if (!isValidId) throw new BadRequestError('invalid MongoDB id');
+
+    const job = await Job.findById(value);
+  }),
 ]);
