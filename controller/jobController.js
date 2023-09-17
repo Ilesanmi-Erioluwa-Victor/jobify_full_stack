@@ -37,4 +37,15 @@ export const createJob = async (req, res, next) => {
   res.json({ status: 'success', message: 'ok', data: job });
 };
 
-ex
+export const getJob = async (req, res, next) => {
+  const { id } = req.params;
+  const job = jobs.find((job) => job.id === id);
+
+  if (!job) {
+    return res.status(404).json({
+      status: 'fail',
+      message: `No job found with this ID : ${id}`,
+    });
+  }
+  res.json({ status: 'success', message: 'ok', data: job });
+};
