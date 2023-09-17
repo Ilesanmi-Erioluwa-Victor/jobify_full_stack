@@ -13,6 +13,9 @@ const withValidationErrors = (validateValues) => {
         const errorMessages = errors.array().map((error) => {
           return [`${error.path} : ${error.msg}`];
         });
+        if (errorMessages[0].startsWith('No')) {
+          throw new NotFoundError(errorMessages);
+        }
         throw new BadRequestError(errorMessages);
       }
 
