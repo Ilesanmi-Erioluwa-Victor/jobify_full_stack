@@ -20,8 +20,9 @@ app.post(
   '/api/v1/test',
   [body('name').notEmpty().withMessage('Name is required')],
   (req, res, next) => {
+    const errors = validateResult(req);
+    console.log(errors);
 
-    
     next();
   },
   (req, res, next) => {
