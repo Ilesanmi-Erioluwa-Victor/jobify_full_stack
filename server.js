@@ -4,9 +4,8 @@ import * as dotenv from 'dotenv';
 
 
 dotenv.config();
-import route from './routes/job.routes';
 
-
+import jobRoute from './routes/job.routes';
 
 const app = express();
 
