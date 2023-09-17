@@ -32,7 +32,14 @@ app.post('/', (req, res, next) => {
 });
 
 app.post('/api/v1/jobs', (req, res, next) => {
-  const {company, position } = req.body
+  const { company, position } = req.body;
+
+  if (!company || !position) {
+    return res.status(400).json({
+      status: "failed",
+      msg : "Please, provide all the required fields"
+    })
+  }
   res.json({ status: 'success', message: 'ok', data: jobs });
 });
 
