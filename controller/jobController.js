@@ -13,7 +13,7 @@ export const createJob = async (req, res, next) => {
 
 export const getJob = async (req, res, next) => {
   const { id } = req.params;
-    const job = await Job.findById(id)
+  const job = await Job.findById(id);
   if (!job) {
     return res.status(404).json({
       status: 'fail',
@@ -49,7 +49,7 @@ export const editJob = async (req, res, next) => {
 
 export const deleteJob = async (req, res, next) => {
   const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
+  const job = Job.findByIdAndDelete(id);
 
   if (!job) {
     return res.status(404).json({
@@ -57,7 +57,5 @@ export const deleteJob = async (req, res, next) => {
       message: `No job found with this ID : ${id}`,
     });
   }
-  const newJobs = jobs.filter((job) => job.id !== id);
-  jobs = newJobs;
   res.json({ status: 'success', message: 'Job deleted' });
 };
