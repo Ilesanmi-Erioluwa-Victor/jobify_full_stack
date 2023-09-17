@@ -31,6 +31,9 @@ app.post('/', (req, res, next) => {
   console.log(req);
 });
 
+// GET JOB
+app.get('/api/v1/jobs/:id', (req, res, next) => {});
+
 // CREATE JOB
 app.post('/api/v1/jobs', (req, res, next) => {
   const { company, position } = req.body;
