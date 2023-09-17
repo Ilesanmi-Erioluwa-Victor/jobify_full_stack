@@ -8,3 +8,11 @@ export class NotFoundError extends Error {
     }
     
 }
+
+export class BadRequestError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = ' NotFoundError';
+    this.statusCode = StatusCodes.NOT_FOUND;
+  }
+}
