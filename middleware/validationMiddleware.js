@@ -15,3 +15,7 @@ const withValidationErrors = (validateValues) => {
     },
   ];
 };
+
+export const validateTest = withValidationErrors([
+  [body('name').notEmpty().withMessage('Name is required')],
+]);
