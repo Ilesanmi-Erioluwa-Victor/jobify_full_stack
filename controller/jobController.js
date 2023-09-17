@@ -47,8 +47,7 @@ export const editJob = async (req, res, next) => {
 
 export const deleteJob = async (req, res, next) => {
   const { id } = req.params;
-  const job = Job.findByIdAndDelete(id);
-
+  const job = await Job.findByIdAndDelete(id);
   if (!job) {
     return res.status(404).json({
       status: 'fail',
