@@ -31,9 +31,15 @@ app.post('/', (req, res, next) => {
   console.log(req);
 });
 
+app.post('/api/v1/jobs', (req, res, next) => {
+  res.json({ status: 'success', message: 'ok', data: jobs });
+});
+
 app.get('/api/v1/jobs', (req, res, next) => {
   res.json({ status: 'success', message: 'ok', data: jobs });
 });
+
+
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log('server running on : PORT', PORT);
