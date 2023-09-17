@@ -45,6 +45,22 @@ app.get('/api/v1/jobs/:id', (req, res, next) => {
   res.json({ status: 'success', message: 'ok', data: job });
 });
 
+// DELETE JOB
+app.delete('/api/v1/jobs/:id', (req, res, next) => {
+  const { id } = req.params;
+  const job = jobs.find((job) => job.id === id);
+
+  if (!job) {
+    return res.status(404).json({
+      status: 'fail',
+      message: `No job found with this ID : ${id}`,
+    });
+  }
+  const newJobs = jobs.filter((job) => job.id !== id);
+  jobs = newJobs;
+  res.json({ status: 'success', message: 'Job deleted' });
+});
+
 // EDIT JOB
 app.patch('/api/v1/jobs/:id', (req, res, next) => {
   const { id } = req.params;
