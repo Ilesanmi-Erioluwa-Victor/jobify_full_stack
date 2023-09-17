@@ -2,7 +2,11 @@ import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 
+
 dotenv.config();
+import route from './routes/job.routes';
+
+
 
 const app = express();
 
