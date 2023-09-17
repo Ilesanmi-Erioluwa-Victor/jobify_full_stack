@@ -16,6 +16,6 @@ const withValidationErrors = (validateValues) => {
   ];
 };
 
-export const validateTest = withValidationErrors([
+export const validateJobInput = withValidationErrors([
   [body('name').notEmpty().withMessage('Name is required')],
 ]);
