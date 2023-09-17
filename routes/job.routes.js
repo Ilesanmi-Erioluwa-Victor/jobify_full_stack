@@ -5,7 +5,7 @@ import {
   editJob,
   getAllJobs,
   getJob,
-} from '../controller/jobController';
+} from '../controller/jobController.js';
 
 const route = Router();
 

@@ -2,11 +2,10 @@ import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 
-dotenv.config();
-
-import jobRoute from './routes/job.routes';
+import jobRoute from './routes/job.routes.js';
 
 const app = express();
+dotenv.config();
 
 process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
