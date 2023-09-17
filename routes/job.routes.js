@@ -9,4 +9,5 @@ import {
 
 const route = Router();
 
-route.route("/").get(getAllJobs).post(createJob)
+route.route('/').get(getAllJobs).post(createJob);
+route.route('/:id').get(getJob).patch(editJob).delete(deleteJob);
