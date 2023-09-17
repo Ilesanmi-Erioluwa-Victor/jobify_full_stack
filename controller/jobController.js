@@ -1,5 +1,7 @@
-import Job from '../models/jobModel.js';
 import { StatusCodes } from 'http-status-codes';
+import Job from '../models/jobModel.js';
+
+import { NotFoundError } from '../errors/customError.js';
 
 export const getAllJobs = async (req, res, next) => {
   const jobs = await Job.find();
@@ -21,13 +23,10 @@ export const createJob = async (req, res, next) => {
 
 export const getJob = async (req, res, next) => {
   const { id } = req.params;
-  const job = await Job.findById(id);
-  if (!job) {
-    return res.status(StatusCodes.FORBIDDEN).json({
-      status: 'fail',
-      message: `No job found with this ID : ${id}`,
-    });
-  }
+    const job = await Job.findById(id);
+    
+  if (!job) throw new NotFoundError(`No job found with this ID : ${id}`)
+    
   res.json({ status: 'success', message: 'ok', data: job });
 };
 

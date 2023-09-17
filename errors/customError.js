@@ -5,5 +5,6 @@ export class NotFoundError extends Error {
     super(message);
     this.name = ' NotFoundError';
     this.statusCodes = StatusCodes.NOT_FOUND;
-  }
+    }
+    
 }
