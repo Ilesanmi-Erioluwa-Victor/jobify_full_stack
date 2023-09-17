@@ -10,7 +10,7 @@ const withValidationErrors = (validateValues) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         const errorMessages = errors.array().map((error) => {
-          return [`${error.path}: ${error.msg}`];
+          return [`${error.path} : ${error.msg}`];
         });
         throw new BadRequestError(errorMessages);
       }
