@@ -37,7 +37,7 @@ export const editJob = async (req, res, next) => {
   const updatedJob = await Job.findByIdAndUpdate(id, req.body, {
     new: true,
   });
-  res.json({ status: 'success', message: 'ok', data: job });
+  res.json({ status: 'success', message: 'ok', data: updatedJob });
 };
 
 export const deleteJob = async (req, res, next) => {
