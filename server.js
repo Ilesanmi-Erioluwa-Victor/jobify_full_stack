@@ -1,20 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
-import { nanoid } from 'nanoid';
 
-let jobs = [
-  {
-    id: nanoid(),
-    company: 'apple',
-    position: 'frontend',
-  },
-  {
-    id: nanoid(),
-    company: 'apple',
-    position: 'frontend',
-  },
-];
+
 dotenv.config();
 
 const app = express();
