@@ -112,9 +112,11 @@ app.get('/api/v1/jobs', (req, res, next) => {
   res.json({ status: 'success', message: 'ok', data: jobs });
 });
 
-app.use("*", (req, res, next) => {
-  
-})
+app.use('*', (req, res, next) => {
+  res.status(404).json({
+    message: 'This route is not Found',
+  });
+});
 
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
