@@ -40,6 +40,8 @@ app.post('/api/v1/jobs', (req, res, next) => {
       msg : "Please, provide all the required fields"
     })
   }
+
+  const id = nanoid(10)
   res.json({ status: 'success', message: 'ok', data: jobs });
 });
 
