@@ -9,3 +9,4 @@ import {
 
 const route = Router();
 
+route.route("/").get(getAllJobs).post(createJob)
