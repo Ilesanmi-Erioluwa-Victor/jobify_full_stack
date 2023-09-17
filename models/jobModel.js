@@ -11,6 +11,7 @@ const JobSchema = new mongoose.Schema({
   jobType: {
     type: String,
     enum: ['full-time', 'part-time', 'internship'],
-    default: 'pending',
-  },
+    default: 'full-time',
+    },
+  
 });
