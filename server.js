@@ -2,7 +2,6 @@ import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 
-
 dotenv.config();
 
 const app = express();
@@ -23,16 +22,16 @@ app.post('/', (req, res, next) => {
 app.get('/api/v1/jobs/:id');
 
 // DELETE JOB
-app.delete('/api/v1/jobs/:id', );
+app.delete('/api/v1/jobs/:id');
 
 // EDIT JOB
-app.patch('/api/v1/jobs/:id', );
+app.patch('/api/v1/jobs/:id');
 
 // CREATE JOB
-app.post('/api/v1/jobs', );
+app.post('/api/v1/jobs');
 
 // ALL JOBS
-app.get('/api/v1/jobs', );
+app.get('/api/v1/jobs');
 
 app.use('*', (req, res, next) => {
   res.status(404).json({
@@ -40,9 +39,7 @@ app.use('*', (req, res, next) => {
   });
 });
 
-app.use((error, req, res, next) => {
-  
-})
+app.use((error, req, res, next) => {});
 
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
