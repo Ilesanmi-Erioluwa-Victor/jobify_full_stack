@@ -31,6 +31,7 @@ app.post('/', (req, res, next) => {
   console.log(req);
 });
 
+// CREATE JOB
 app.post('/api/v1/jobs', (req, res, next) => {
   const { company, position } = req.body;
 
@@ -51,6 +52,7 @@ app.post('/api/v1/jobs', (req, res, next) => {
   res.json({ status: 'success', message: 'ok', data: job });
 });
 
+// ALL JOBS
 app.get('/api/v1/jobs', (req, res, next) => {
   res.json({ status: 'success', message: 'ok', data: jobs });
 });
