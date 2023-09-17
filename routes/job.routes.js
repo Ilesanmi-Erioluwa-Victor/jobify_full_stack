@@ -1,1 +1,11 @@
-import { Router } from "express"
+import { Router } from 'express';
+import {
+  createJob,
+  deleteJob,
+  editJob,
+  getAllJobs,
+  getJob,
+} from '../controller/jobController';
+
+const route = Router();
+
