@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
+import mongoose from "mongoose"
 
 dotenv.config();
 
@@ -27,6 +28,9 @@ app.use('*', (req, res, next) => {
 app.use((error, req, res, next) => {});
 
 const PORT = process.env.PORT || 8081;
+
+try
+
 app.listen(PORT, () => {
   console.log('server running on : PORT', PORT);
 });
