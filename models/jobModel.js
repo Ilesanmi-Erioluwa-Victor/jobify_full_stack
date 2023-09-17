@@ -5,6 +5,7 @@ const JobSchema = new mongoose.Schema({
     location: String,
     jobStatus: {
         type: String,
-        enum: [""]
+        enum: ["interview", "declined", "pending"],
+        default : "pending"
   }
 });
