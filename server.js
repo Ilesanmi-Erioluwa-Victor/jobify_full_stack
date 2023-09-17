@@ -32,7 +32,18 @@ app.post('/', (req, res, next) => {
 });
 
 // GET JOB
-app.get('/api/v1/jobs/:id', (req, res, next) => {});
+app.get('/api/v1/jobs/:id', (req, res, next) => {
+  const { id } = req.params;
+  const job = jobs.find((job) => job.id === id);
+
+  if (!job) {
+    return res.status(404).json({
+      status: 'fail',
+      message: `No job found with this ID : ${id}`,
+    });
+  }
+  res.json({ status: 'success', message: 'ok', data: job });
+});
 
 // CREATE JOB
 app.post('/api/v1/jobs', (req, res, next) => {
