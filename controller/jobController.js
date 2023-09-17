@@ -27,23 +27,16 @@ export const editJob = async (req, res, next) => {
   const { id } = req.params;
   const { position, company } = req.body;
 
-  if (!company || !position) {
-    return res.status(400).json({
-      status: 'failed',
-      msg: 'Please, provide all the required fields',
-    });
-  }
-
-  const job = jobs.find((job) => job.id === id);
-
-  if (!job) {
+  if (!id) {
     return res.status(404).json({
       status: 'fail',
       message: `No job found with this ID : ${id}`,
     });
   }
-  job.company = company;
-  job.position = position;
+
+  const updatedJob = await Job.findByIdAndUpdate(id, req.body, {
+    new: true,
+  });
   res.json({ status: 'success', message: 'ok', data: job });
 };
 
