@@ -11,6 +11,6 @@ import { validateJobInput } from '../middleware/validationMiddleware.js';
 const route = Router();
 
 route.route('/').get(getAllJobs).post(validateJobInput, createJob);
-route.route('/:id').get(getJob).patch(editJob).delete(deleteJob);
+route.route('/:id').get(getJob).patch(validateJobInput,editJob).delete(deleteJob);
 
 export default route;
