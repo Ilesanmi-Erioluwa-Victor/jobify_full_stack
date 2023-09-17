@@ -112,6 +112,10 @@ app.get('/api/v1/jobs', (req, res, next) => {
   res.json({ status: 'success', message: 'ok', data: jobs });
 });
 
+app.use("*", (req, res, next) => {
+  
+})
+
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log('server running on : PORT', PORT);
