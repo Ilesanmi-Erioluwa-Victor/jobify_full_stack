@@ -75,30 +75,10 @@ app.patch('/api/v1/jobs/:id', (req, res, next) => {
 });
 
 // CREATE JOB
-app.post('/api/v1/jobs', (req, res, next) => {
-  const { company, position } = req.body;
-
-  if (!company || !position) {
-    return res.status(400).json({
-      status: 'failed',
-      msg: 'Please, provide all the required fields',
-    });
-  }
-
-  const id = nanoid(10);
-  const job = {
-    id,
-    company,
-    position,
-  };
-  jobs.push(job);
-  res.json({ status: 'success', message: 'ok', data: job });
-});
+app.post('/api/v1/jobs', );
 
 // ALL JOBS
-app.get('/api/v1/jobs', (req, res, next) => {
-  res.json({ status: 'success', message: 'ok', data: jobs });
-});
+app.get('/api/v1/jobs', );
 
 app.use('*', (req, res, next) => {
   res.status(404).json({
