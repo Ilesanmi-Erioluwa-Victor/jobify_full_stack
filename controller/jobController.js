@@ -48,7 +48,6 @@ export const editJob = async (req, res, next) => {
 export const deleteJob = async (req, res, next) => {
   const { id } = req.params;
   const job = await Job.findByIdAndDelete(id);
-  if (!job) throw new NotFoundError(`No job found with this ID : ${id}`);
   res
     .status(StatusCodes.OK)
     .json({ status: 'success', message: 'Job deleted' });
