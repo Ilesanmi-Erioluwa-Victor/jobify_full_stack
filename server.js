@@ -3,9 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import expError from "express-validator"
-
-const { body, validateResult } = expError;
+import { body, validationResult } from 'express-validator';
 
 dotenv.config();
 
@@ -22,7 +20,7 @@ app.post(
   '/api/v1/test',
   [body('name').notEmpty().withMessage('Name is required')],
   (req, res, next) => {
-    const errors = validateResult(req);
+    const errors = validationResult(req);
     console.log(errors);
 
     next();
