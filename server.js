@@ -16,10 +16,12 @@ process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
 app.use(express.json());
 
-app.post('/api/v1/test', [body("name")
-], (req, res, next) => {
-   const { name } = req.body
-  console.log(req);
+app.post('/api/v1/test', [body('name')], (req, res, next) => {
+  const { name } = req.body;
+
+  res.json({
+    message: `Hello from ${name}`,
+  });
 });
 
 app.use('/api/v1/jobs', jobRoute);
