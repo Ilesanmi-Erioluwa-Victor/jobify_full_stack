@@ -65,6 +65,8 @@ app.patch('/api/v1/jobs/:id', (req, res, next) => {
       message: `No job found with this ID : ${id}`,
     });
   }
+  job.company = company;
+  job.position = position;
   res.json({ status: 'success', message: 'ok', data: job });
 });
 
