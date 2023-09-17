@@ -1,5 +1,5 @@
 import { body, param, validationResult } from 'express-validator';
-import { BadRequestError } from '../errors/customError.js';
+import { BadRequestError, NotFoundError } from '../errors/customError.js';
 import { JOB_STATUS, JOB_TYPE } from '../utils/constant.js';
 import mongoose from 'mongoose';
 import Job from '../models/jobModel.js';
@@ -43,5 +43,7 @@ export const validateParam = withValidationErrors([
     if (!isValidId) throw new BadRequestError('invalid MongoDB id');
 
     const job = await Job.findById(value);
+
+    if (!job) throw new NotFoundError('No job with this id found');
   }),
 ]);
