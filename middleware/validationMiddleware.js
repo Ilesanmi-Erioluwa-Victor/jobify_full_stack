@@ -18,5 +18,6 @@ const withValidationErrors = (validateValues) => {
 
 export const validateJobInput = withValidationErrors([
   [body('company').notEmpty().withMessage('Company is required')],
+  [body('jobLocation').notEmpty().withMessage('jobLocation is required')],
   [body('position').notEmpty().withMessage('position is required')],
 ]);
