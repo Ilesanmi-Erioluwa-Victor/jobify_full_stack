@@ -1,26 +1,13 @@
-import { nanoid } from 'nanoid';
 import Job from '../models/jobModel.js';
 
-let jobs = [
-  {
-    id: nanoid(),
-    company: 'apple',
-    position: 'frontend',
-  },
-  {
-    id: nanoid(),
-    company: 'apple',
-    position: 'frontend',
-  },
-];
-
 export const getAllJobs = async (req, res, next) => {
+  const jobs = await Job.find();
   res.json({ status: 'success', message: 'ok', data: jobs });
 };
 
 export const createJob = async (req, res, next) => {
   const { company, position } = req.body;
-  const job = await Job.create("Something went wrong");
+  const job = await Job.create(req.body);
   res.status(201).json({ status: 'success', message: 'ok', data: job });
 };
 
