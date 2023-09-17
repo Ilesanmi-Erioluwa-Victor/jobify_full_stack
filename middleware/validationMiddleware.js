@@ -34,3 +34,9 @@ export const validateJobInput = withValidationErrors([
       .withMessage('invalid type value'),
   ],
 ]);
+
+export const validateParam = withValidationErrors([
+    param("id").custom(value => {
+        
+    })
+])
