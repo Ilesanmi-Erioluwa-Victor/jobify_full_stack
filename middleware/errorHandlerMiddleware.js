@@ -5,8 +5,9 @@ const errorHandlerMiddleware = (error, req, res, next) => {
   const statusCode = error.statusCode || StatusCodes.INTERNAL_SERVER_ERROR;
   const msg = error.message || 'Something went wrong, try again ';
 
-  res.status(statusCode).json({
+  res.json({
     message: msg,
+    statusCode,
   });
   next();
 };
