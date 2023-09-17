@@ -16,7 +16,7 @@ process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
 app.use(express.json());
 
-app.post('/api/v1/test', [body('name').notEmpty().withMessage("Name is required")], () =>{},(req, res, next) => {
+app.post('/api/v1/test', [body('name').notEmpty().withMessage("Name is required")], (req, res, next) =>{},(req, res, next) => {
   const { name } = req.body;
 
   res.json({
