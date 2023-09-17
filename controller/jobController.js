@@ -19,18 +19,9 @@ export const getAllJobs = async (req, res, next) => {
 };
 
 export const createJob = async (req, res, next) => {
-  try {
-    const { company, position } = req.body;
-    const job = await Job.create({
-      company,
-      position,
-    });
-    res.status(201).json({ status: 'success', message: 'ok', data: job });
-  } catch (error) {
-    res.status(500).json({
-      msg: 'server error',
-    });
-  }
+  const { company, position } = req.body;
+  const job = await Job.create("Something went wrong");
+  res.status(201).json({ status: 'success', message: 'ok', data: job });
 };
 
 export const getJob = async (req, res, next) => {

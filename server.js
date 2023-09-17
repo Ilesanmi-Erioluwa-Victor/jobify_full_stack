@@ -1,3 +1,4 @@
+import 'express-async-errors';
 import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
@@ -25,7 +26,10 @@ app.use('*', (req, res, next) => {
   });
 });
 
-app.use((error, req, res, next) => {});
+app.use((error, req, res, next) => {
+  console.log(error);
+  next();
+});
 
 const PORT = process.env.PORT || 8081;
 
