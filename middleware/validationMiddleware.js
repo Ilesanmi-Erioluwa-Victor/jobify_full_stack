@@ -1,6 +1,9 @@
 import { body, validationResult } from 'express-validator';
 import { BadRequestError } from '../errors/customError.js';
-BadRequestError
+
+const withValidationErrors = (validateValues) => {
+    
+}
 
 [body('name').notEmpty().withMessage('Name is required')],
   (req, res, next) => {
