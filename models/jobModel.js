@@ -2,5 +2,9 @@ import mongoose from 'mongoose';
 
 const JobSchema = new mongoose.Schema({
   company: String,
-  location: String,
+    location: String,
+    jobStatus: {
+        type: String,
+        enum: [""]
+  }
 });
