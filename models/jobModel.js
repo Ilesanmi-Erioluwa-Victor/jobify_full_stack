@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { JOB_STATUS } from '../utils/constant';
 
 const JobSchema = new mongoose.Schema(
   {
