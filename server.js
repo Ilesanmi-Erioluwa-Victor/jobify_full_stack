@@ -21,7 +21,7 @@ app.post(
   [body('name').notEmpty().withMessage('Name is required')],
   (req, res, next) => {
     const errors = validationResult(req);
-    console.log(errors);
+    console.log(errors.isEmpty());
 
     next();
   },
