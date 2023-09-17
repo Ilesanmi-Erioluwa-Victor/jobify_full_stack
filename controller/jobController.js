@@ -2,7 +2,12 @@ import Job from '../models/jobModel.js';
 
 export const getAllJobs = async (req, res, next) => {
   const jobs = await Job.find();
-  res.json({ status: 'success', message: 'ok', data: jobs });
+  res.json({
+    length: jobs.length,
+    status: 'success',
+    message: 'ok',
+    data: jobs,
+  });
 };
 
 export const createJob = async (req, res, next) => {
