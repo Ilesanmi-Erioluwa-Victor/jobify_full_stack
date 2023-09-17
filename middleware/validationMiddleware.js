@@ -36,7 +36,9 @@ export const validateJobInput = withValidationErrors([
 ]);
 
 export const validateParam = withValidationErrors([
-    param("id").custom(value => {
-        return true
-    }).withMessage("invalid MongoDB id")
-])
+  param('id')
+    .custom((value) => {
+      return false;
+    })
+    .withMessage('invalid MongoDB id'),
+]);
