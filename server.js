@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
 dotenv.config();
 
@@ -29,8 +29,12 @@ app.use((error, req, res, next) => {});
 
 const PORT = process.env.PORT || 8081;
 
-try
-
-app.listen(PORT, () => {
-  console.log('server running on : PORT', PORT);
-});
+try {
+  await mongoose.connect(process.env.MONGODB_URL);
+  app.listen(PORT, () => {
+    console.log('server running on : PORT', PORT);
+  });
+} catch (error) {
+  console.log(error);
+  process.exit(1);
+}
