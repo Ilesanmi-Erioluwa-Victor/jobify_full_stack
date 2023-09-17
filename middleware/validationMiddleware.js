@@ -8,8 +8,11 @@ const withValidationErrors = (validateValues) => {
     (req, res, next) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-          const errorMessages = errors.array().map((error) => {
-            console.log(error)
+        const errorMessages = errors.array().map((error) => {
+          return {
+            path: error.path,
+            msg: error.msg,
+          };
         });
         throw new BadRequestError(errorMessages);
       }
