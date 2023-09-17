@@ -23,10 +23,10 @@ export const createJob = async (req, res, next) => {
 
 export const getJob = async (req, res, next) => {
   const { id } = req.params;
-    const job = await Job.findById(id);
-    
-  if (!job) throw new NotFoundError(`No job found with this ID : ${id}`)
-    
+  const job = await Job.findById(id);
+
+  if (!job) throw new NotFoundError(`No job found with this ID : ${id}`);
+
   res.json({ status: 'success', message: 'ok', data: job });
 };
 
@@ -38,12 +38,7 @@ export const editJob = async (req, res, next) => {
     new: true,
   });
 
-  if (!updatedJob) {
-    return res.status(StatusCodes.FORBIDDEN).json({
-      status: 'fail',
-      message: `No job found with this ID : ${id}`,
-    });
-  }
+  if (!updatedJob) throw new NotFoundError(`No job found with this ID : ${id}`);
 
   res
     .status(StatusCodes.OK)
@@ -53,12 +48,7 @@ export const editJob = async (req, res, next) => {
 export const deleteJob = async (req, res, next) => {
   const { id } = req.params;
   const job = await Job.findByIdAndDelete(id);
-  if (!job) {
-    return res.status(StatusCodes.FORBIDDEN).json({
-      status: 'fail',
-      message: `No job found with this ID : ${id}`,
-    });
-  }
+  if (!job) throw new NotFoundError(`No job found with this ID : ${id}`);
   res
     .status(StatusCodes.OK)
     .json({ status: 'success', message: 'Job deleted' });
