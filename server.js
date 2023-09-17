@@ -3,7 +3,6 @@ import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import { validateTest } from './middleware/validationMiddleware.js';
 
 dotenv.config();
 
@@ -15,14 +14,6 @@ const app = express();
 process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
 app.use(express.json());
-
-app.post('/api/v1/test', validateTest, (req, res, next) => {
-  const { name } = req.body;
-
-  res.json({
-    message: `Hello from ${name}`,
-  });
-});
 
 app.use('/api/v1/jobs', jobRoute);
 
