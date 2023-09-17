@@ -32,16 +32,17 @@ export const editJob = async (req, res, next) => {
   const { id } = req.params;
   const { position, company } = req.body;
 
-  if (!id) {
+  const updatedJob = await Job.findByIdAndUpdate(id, req.body, {
+    new: true,
+  });
+
+  if (!updatedJob) {
     return res.status(404).json({
       status: 'fail',
       message: `No job found with this ID : ${id}`,
     });
   }
 
-  const updatedJob = await Job.findByIdAndUpdate(id, req.body, {
-    new: true,
-  });
   res.json({ status: 'success', message: 'ok', data: updatedJob });
 };
 
