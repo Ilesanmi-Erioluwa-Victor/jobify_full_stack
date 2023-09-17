@@ -1,4 +1,4 @@
-import { StatusCodes } from "http-status-codes";
+import { StatusCodes } from 'http-status-codes';
 
 const errorHandlerMiddleware = (error, req, res, next) => {
   console.log(error.message);
@@ -7,3 +7,5 @@ const errorHandlerMiddleware = (error, req, res, next) => {
   });
   next();
 };
+
+export default errorHandlerMiddleware;

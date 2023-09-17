@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
 dotenv.config();
 
 import jobRoute from './routes/job.routes.js';
+import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.use('*', (req, res, next) => {
   });
 });
 
-app.use();
+app.use(errorHandlerMiddleware);
 
 const PORT = process.env.PORT || 8081;
 
