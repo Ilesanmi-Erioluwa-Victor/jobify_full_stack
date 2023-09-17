@@ -13,8 +13,7 @@ export const createJob = async (req, res, next) => {
 
 export const getJob = async (req, res, next) => {
   const { id } = req.params;
-  const job = jobs.find((job) => job.id === id);
-
+    const job = await Job.findById(id)
   if (!job) {
     return res.status(404).json({
       status: 'fail',
