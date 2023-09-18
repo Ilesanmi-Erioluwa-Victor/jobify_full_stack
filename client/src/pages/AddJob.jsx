@@ -38,11 +38,24 @@ const AddJob = () => {
             labelText={'job location'}
             defaultValue={user.location}
           />
-          <div className="form-row">
-            <label htmlFor="jobStatus" className='from-label'>job status</label>
+          <div className='form-row'>
+            <label
+              htmlFor='jobStatus'
+              className='from-label'
+            >
+              job status
+            </label>
+            <select
+              name='jobStatus'
+              id='jobStatus'
+              className='form-select'
+            ></select>
           </div>
-          <button type="submit" className="btn btn-block form-btn">
-            {isSubmitting ? "wait..." : "add job"}
+          <button
+            type='submit'
+            className='btn btn-block form-btn'
+          >
+            {isSubmitting ? 'wait...' : 'add job'}
           </button>
         </div>
       </Form>
