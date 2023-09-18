@@ -7,5 +7,9 @@ const UserSchema = new mongoose.Schema({
     lastName: {
         type: String,
         default : "lastName"
+    },
+    location: {
+        type: String,
+        default : "my city"
     }
 })
