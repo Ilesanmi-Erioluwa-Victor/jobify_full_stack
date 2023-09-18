@@ -12,7 +12,9 @@ import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { customFetch } from 'utils/CustomFetch';
 
 const AddJob = () => {
-  const { user } = useOutletContext()
+  const { user } = useOutletContext();
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting';
   return <div>AddJob</div>;
 };
 
