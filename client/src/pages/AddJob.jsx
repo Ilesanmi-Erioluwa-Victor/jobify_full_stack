@@ -15,12 +15,20 @@ const AddJob = () => {
   const { user } = useOutletContext();
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
- 
-  return <Wrapper>
-    <Form className='form' method='post'>
- <h4 className="form-title">add job</h4>
-    </Form>
-  </Wrapper>;
+
+  return (
+    <Wrapper>
+      <Form
+        className='form'
+        method='post'
+      >
+        <h4 className='form-title'>add job</h4>
+        <div className="form-center">
+          <FormRow />
+        </div>
+      </Form>
+    </Wrapper>
+  );
 };
 
 export default AddJob;
