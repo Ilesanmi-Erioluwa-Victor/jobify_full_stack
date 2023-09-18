@@ -4,6 +4,9 @@ import { FormRow, Logo } from '../components';
 import { customFetch } from 'utils/CustomFetch';
 import { toast } from "react-toastify"
 
+export const action = async ({ request }) => {
+  
+}
 const Login = () => {
   const navigate = useNavigation();
   const isSubmitting = navigate.state === 'submitting';
