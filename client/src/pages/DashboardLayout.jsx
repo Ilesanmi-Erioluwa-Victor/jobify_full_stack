@@ -35,7 +35,6 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
   };
 
   const logoutUser = async () => {
-    console.log('Hiii');
     navigate('/');
     await customFetch.get('/auth/logout');
     toast.success('Logged out successfully');

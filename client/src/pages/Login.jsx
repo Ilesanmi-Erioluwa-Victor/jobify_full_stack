@@ -33,7 +33,6 @@ export const action = async ({ request }) => {
 const Login = () => {
   const navigate = useNavigation();
   const isSubmitting = navigate.state === 'submitting';
-  console.log(isSubmitting);
   const errors = useActionData();
   return (
     <Wrapper>
