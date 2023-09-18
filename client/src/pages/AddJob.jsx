@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 import { FormRow } from '../components';
 import Wrapper from '../assets/wrappers/DashboardFormPage';
-import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
+import { JOB_STATUS, JOB_TYPE } from '../../../utils/constant';
 import { customFetch } from 'utils/CustomFetch';
 
 const AddJob = () => {
