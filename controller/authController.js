@@ -31,6 +31,7 @@ export const login = async (req, res, next) => {
     message: 'ok',
     data: {
       id: user.id,
+      token,
     },
   });
 };
