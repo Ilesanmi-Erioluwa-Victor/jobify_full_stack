@@ -20,9 +20,16 @@ export const register = async (req, res, next) => {
 export const login = async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email });
 
-  if (!user) throw new UnauthenticatedError('invalid credential');
-  const isPasswordCorrect = await comparePassword(
-    req.body.password,
-    user.password
-  );
+  const isValidUser =
+    user && (await comparePassword(req.body.password, user.password));
+
+  if (!isValidUser) throw new UnauthenticatedError('invalid credential');
+    res.status(StatusCodes.OK).json({
+        status: "success",
+        message: "ok",
+        data: {
+            user.id,
+            
+        }
+   })
 };
