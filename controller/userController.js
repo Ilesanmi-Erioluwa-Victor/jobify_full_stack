@@ -7,3 +7,15 @@ export const getCurrentUser = async (req, res, next) => {
         msg : "get Current user"
     })
 }
+
+export const getApplication = async (req, res, next) => {
+  res.status(StatusCodes.OK).json({
+    msg: 'get Current user',
+  });
+};
+
+export const getCurrentUser = async (req, res, next) => {
+  res.status(StatusCodes.OK).json({
+    msg: 'get Current user',
+  });
+};
