@@ -28,10 +28,6 @@ export const login = async (req, res, next) => {
   const token = createJwt({ userId: user._id, role: user.role });
   res.status(StatusCodes.OK).json({
     status: 'success',
-    message: 'ok',
-    data: {
-      id: user.id,
-      token,
-    },
+    message: 'user logged in',
   });
 };
