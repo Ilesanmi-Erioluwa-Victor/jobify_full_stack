@@ -8,4 +8,5 @@ import {
 const route = Router();
 route.post('/register', validateRegisterInput, register);
 route.post('/login', validateLoginInput, login);
+route.get("/logout",)
 export default route;
