@@ -1,3 +1,4 @@
 export const authenticateUser = async (req, res, next) => {
-  next();
+    console.log("hello from auth")
+    next();
 };

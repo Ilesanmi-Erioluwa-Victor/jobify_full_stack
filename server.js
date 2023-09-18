@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
 dotenv.config();
-
+import { authenticateUser } from './middleware/auth/authMiddlware.js';
 import jobRoute from './routes/job.routes.js';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import authRoute from './routes/user.routes.js';
@@ -16,7 +16,7 @@ process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
 app.use(express.json());
 
-app.use('/api/v1/jobs', jobRoute);
+app.use('/api/v1/jobs', authenticateUser, jobRoute);
 app.use('/api/v1/auth', authRoute);
 
 app.use('*', (req, res, next) => {

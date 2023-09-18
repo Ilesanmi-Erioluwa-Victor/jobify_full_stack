@@ -11,7 +11,6 @@ import {
   validateIdParam,
 } from '../middleware/validationMiddleware.js';
 
-import { authenticateUser } from '../middleware/auth/authMiddlware.js';
 
 
 const route = Router();
