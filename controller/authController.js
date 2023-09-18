@@ -26,10 +26,14 @@ export const login = async (req, res, next) => {
 
   if (!isValidUser) throw new UnauthenticatedError('invalid credential');
   const token = createJwt({ userId: user._id, role: user.role });
-  res.cookie("token", token, {
+
+  const aDay = 1000 * 60 * 60 * 24;
+
+  res.cookie('token', token, {
     httpOnly: true,
-    expires : 
- })
+    expires: new Date(Date.now() + aDay),
+    secure: process.env.NODE_ENV,
+  });
   res.status(StatusCodes.OK).json({
     status: 'success',
     message: 'user logged in',
