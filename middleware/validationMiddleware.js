@@ -15,10 +15,12 @@ const withValidationErrors = (validateValues) => {
     (req, res, next) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        const errorMessages = errors.array().map((error) => error.msg);
+        const errorMessages = errors
+          .array()
+          .map((error) => `${error.path} : ${error.msg}`);
 
-        const firstMessage = errorMessages[0];
-        console.log(Object.getPrototypeOf(firstMessage));
+        // const firstMessage = errorMessages[0];
+        // console.log(Object.getPrototypeOf(firstMessage));
         if (errorMessages[0].startsWith('no job')) {
           throw new NotFoundError(errorMessages);
         }
@@ -71,11 +73,7 @@ export const validateRegisterInput = withValidationErrors([
         throw new BadRequestError('email already exists');
       }
     }),
-  body('password')
-    .notEmpty()
-    .withMessage('password is required')
-    .isLength({ min: 8 })
-    .withMessage('password must be at least 8 characters long'),
+  body('password').notEmpty().withMessage('password is required'),
   body('location').notEmpty().withMessage('location is required'),
   body('lastName').notEmpty().withMessage('last name is required'),
 ]);
