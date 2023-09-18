@@ -12,6 +12,7 @@ import { JOB_STATUS, JOB_TYPE } from '../../../utils/constants';
 import { customFetch } from 'utils/CustomFetch';
 
 const AddJob = () => {
+  const { user } = useOutletContext()
   return <div>AddJob</div>;
 };
 
