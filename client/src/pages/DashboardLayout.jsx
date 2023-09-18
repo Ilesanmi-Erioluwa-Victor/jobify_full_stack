@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useLoaderData, redirect } from 'react-router';
 import Wrapper from 'assets/wrappers/Dashboard';
 import { SmallSidebar, BigSidebar, Navbar } from 'components';
 
@@ -9,6 +9,8 @@ export const Loader = () => {
 const DashboardContext = createContext();
 
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
+  const data = useLoaderData();
+  console.log(data);
   const user = { name: 'John' };
 
   const [showSidebar, setShowSidebar] = useState(false);
