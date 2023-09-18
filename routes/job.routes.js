@@ -11,8 +11,6 @@ import {
   validateIdParam,
 } from '../middleware/validationMiddleware.js';
 
-
-
 const route = Router();
 route.route('/').get(getAllJobs).post(validateJobInput, createJob);
 
