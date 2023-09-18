@@ -40,8 +40,9 @@ const Login = () => {
         <button
           type='submit'
           className='btn btn-block'
+          disabled={isSubmitting}
         >
-          submit{' '}
+          {isSubmitting ? 'Logging in ...' : 'Submit'}
         </button>
         <button
           type='button'
