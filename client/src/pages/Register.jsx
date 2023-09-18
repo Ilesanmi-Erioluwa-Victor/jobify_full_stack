@@ -2,8 +2,9 @@ import { Link, Form, useNavigate, redirect } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo } from '../components';
 
-export const action = async (data) => {
-  console.log(data);
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  console.log(formData);
   return null;
 };
 
