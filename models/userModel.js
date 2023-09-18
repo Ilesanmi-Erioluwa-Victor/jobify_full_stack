@@ -11,5 +11,9 @@ const UserSchema = new mongoose.Schema({
     location: {
         type: String,
         default : "my city"
+    },
+    role: {
+        type: String,
+        enum : 
     }
 })
