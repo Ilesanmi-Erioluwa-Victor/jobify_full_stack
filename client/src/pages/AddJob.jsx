@@ -18,7 +18,7 @@ const AddJob = () => {
  
   return <Wrapper>
     <Form className='form' method='post'>
-
+ <h4 className="form-title">add job</h4>
     </Form>
   </Wrapper>;
 };
