@@ -14,3 +14,7 @@ export const authenticateUser = (req, res, next) => {
     throw new UnauthenticatedError('authentication failed');
   }
 };
+
+export const authorizePermissions = (req, res, next) => {
+  
+}
