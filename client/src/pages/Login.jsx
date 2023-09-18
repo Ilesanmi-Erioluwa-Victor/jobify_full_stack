@@ -7,7 +7,13 @@ import { toast } from 'react-toastify';
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  return null;
+  
+  try {
+    await customFetch.post("/auth/login", data)
+  } catch (error) {
+    return null;
+    
+  }
 };
 const Login = () => {
   const navigate = useNavigation();
