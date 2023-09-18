@@ -54,10 +54,18 @@ export const validateIdParam = withValidationErrors([
     const job = await Job.findById(value);
     if (!job) throw new NotFoundError(`no job with id ${value}`);
     const isAdmin = req.user.role === 'admin';
-    const isOwner = req.user.userId === job.createdBy.toString();
-
-    if (!isAdmin && !isOwner)
-      throw new UnauthorizedError('not authorized to access this route');
+    const isUser = req.user.role === 'role';
+    const isOwner = req.user.userId.toString() === job.createdBy.toString();
+    
+    if (!isAdmin && !isOwner) {
+      switch (true) {
+        case !isAdmin && !isOwner:
+          throw new Error('not authorized to access this route');
+        case !isUser && !isOwner:
+          throw new Error('not authorized to access this route');
+        default:
+      }
+    }
   }),
 ]);
 
