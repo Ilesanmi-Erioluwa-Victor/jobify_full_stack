@@ -28,7 +28,6 @@ const AddJob = () => {
             type={'text'}
             name={'position'}
           />
-
           <FormRow
             type={'text'}
             name={'company'}
@@ -36,8 +35,12 @@ const AddJob = () => {
           <FormRow
             type={'text'}
             name={'jobLocation'}
-            labelText={"job location"}
+            labelText={'job location'}
+            defaultValue={user.location}
           />
+          <button type="submit" className="btn btn-block form-btn">
+            {isSubmitting ? "wait..." : "add job"}
+          </button>
         </div>
       </Form>
     </Wrapper>
