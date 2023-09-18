@@ -2,9 +2,15 @@ import { useState, createContext, useContext } from 'react';
 import { Outlet, useLoaderData, redirect } from 'react-router';
 import Wrapper from 'assets/wrappers/Dashboard';
 import { SmallSidebar, BigSidebar, Navbar } from 'components';
+import { customFetch } from 'utils/CustomFetch';
 
-export const Loader = () => {
-  return 'Hello world';
+export const Loader = async () => {
+  try {
+    const { data } = await customFetch.get('/users/current-user');
+    return data;
+  } catch (error) {
+    return redirect('/');
+  }
 };
 const DashboardContext = createContext();
 
