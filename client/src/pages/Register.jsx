@@ -1,29 +1,26 @@
-import {
-  Link,
-  Form,
-  redirect,
-  useNavigation,
-} from 'react-router-dom';
+import { Link, Form, redirect, useNavigation } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo } from '../components';
 import { customFetch } from 'utils/CustomFetch';
+import { toast } from 'react-toastify';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
     await customFetch.post('/auth/register', data);
+    toast.success('Registration successful');
     return redirect('/login');
   } catch (error) {
-    console.log(error);
+    toast.error(error?.response?.data?.msg);
     return error;
   }
 };
 
 const Register = () => {
   const navigate = useNavigation();
-  console.log(navigate)
-  const isSubmitting = navigate.state === "submitting"
+  console.log(navigate);
+  const isSubmitting = navigate.state === 'submitting';
 
   return (
     <Wrapper>
