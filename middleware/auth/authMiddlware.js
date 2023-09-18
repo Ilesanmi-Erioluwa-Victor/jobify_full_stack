@@ -15,6 +15,9 @@ export const authenticateUser = (req, res, next) => {
   }
 };
 
-export const authorizePermissions = (req, res, next) => {
-  
-}
+export const authorizePermissions = (...roles) => {
+  return (req, res, next) => {
+    console.log(roles);
+    next();
+  };
+};
