@@ -33,6 +33,11 @@ const AddJob = () => {
             type={'text'}
             name={'company'}
           />
+          <FormRow
+            type={'text'}
+            name={'jobLocation'}
+            labelText={"job location"}
+          />
         </div>
       </Form>
     </Wrapper>
