@@ -1,4 +1,4 @@
-import { Link, useNavigation } from 'react-router-dom';
+import { Link, redirect, useNavigation } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo } from '../components';
 import { customFetch } from 'utils/CustomFetch';
@@ -10,6 +10,8 @@ export const action = async ({ request }) => {
   
   try {
     await customFetch.post("/auth/login", data)
+    toast.success("Login successful")
+    return redirect("/dashboard")
   } catch (error) {
     return null;
     
