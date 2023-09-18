@@ -10,12 +10,12 @@ export const getCurrentUser = async (req, res, next) => {
 
 export const getApplication = async (req, res, next) => {
   res.status(StatusCodes.OK).json({
-    msg: 'get Current user',
+    msg: 'application stats',
   });
 };
 
-export const getCurrentUser = async (req, res, next) => {
+export const updateUser = async (req, res, next) => {
   res.status(StatusCodes.OK).json({
-    msg: 'get Current user',
+    msg: 'update user',
   });
 };
