@@ -5,6 +5,8 @@ import { customFetch } from 'utils/CustomFetch';
 import { toast } from 'react-toastify';
 
 export const action = async ({ request }) => {
+  const formData = await request.formData();
+  
   return null;
 };
 const Login = () => {
