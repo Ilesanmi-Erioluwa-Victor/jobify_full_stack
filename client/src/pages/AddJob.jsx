@@ -49,7 +49,10 @@ const AddJob = () => {
               name='jobStatus'
               id='jobStatus'
               className='form-select'
-            ></select>
+              defaultValue={JOB_STATUS.PENDING}
+            >
+              
+            </select>
           </div>
           <button
             type='submit'
