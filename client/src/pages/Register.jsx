@@ -1,4 +1,9 @@
-import { Link, Form, useNavigate, redirect } from 'react-router-dom';
+import {
+  Link,
+  Form,
+  redirect,
+  useNavigation,
+} from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo } from '../components';
 import { customFetch } from 'utils/CustomFetch';
@@ -8,7 +13,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData);
   try {
     await customFetch.post('/auth/register', data);
-    return redirect("/login");
+    return redirect('/login');
   } catch (error) {
     console.log(error);
     return error;
@@ -16,6 +21,10 @@ export const action = async ({ request }) => {
 };
 
 const Register = () => {
+  const navigate = useNavigation();
+  console.log(navigate)
+  const isSubmitting = navigate.state === "submitting"
+
   return (
     <Wrapper>
       <Form
@@ -58,8 +67,9 @@ const Register = () => {
         <button
           className='btn btn-block'
           type='submit'
+          disabled={isSubmitting}
         >
-          submit
+          {isSubmitting ? 'Submitting' : ' submit'}
         </button>
         <p>
           Already a member ?
