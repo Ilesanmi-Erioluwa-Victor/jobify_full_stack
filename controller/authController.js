@@ -7,6 +7,8 @@ export const register = async (req, res, next) => {
     req.body.role = isFirstAccount ? "admin" : "user"
   const user = await User.create(req.body);
 
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = 
   res.status(StatusCodes.CREATED).json({
     status: 'success',
     data: user,
