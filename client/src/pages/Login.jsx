@@ -31,9 +31,9 @@ export const action = async ({ request }) => {
   }
 };
 const Login = () => {
-  // const navigate = useNavigation();
-  // const isSubmitting = navigate.state === 'submitting';
-
+  const navigate = useNavigation();
+  const isSubmitting = navigate.state === 'submitting';
+  console.log(isSubmitting);
   const errors = useActionData();
   return (
     <Wrapper>
@@ -58,9 +58,9 @@ const Login = () => {
         <button
           type='submit'
           className='btn btn-block'
-          // disabled={isSubmitting}
+          disabled={isSubmitting}
         >
-          Submit{/* {isSubmitting ? 'Logging in ...' : 'Submit'} */}
+          {isSubmitting ? 'Logging in ...' : 'Submit'}
         </button>
         <button
           type='button'
