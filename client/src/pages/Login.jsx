@@ -43,6 +43,7 @@ const Login = () => {
       >
         <Logo />
         <h4>login</h4>
+        {errors?.msg && <p style={{ color: 'red' }}>{errors?.msg}</p>}
         <FormRow
           type={'email'}
           name={'email'}
@@ -57,9 +58,9 @@ const Login = () => {
         <button
           type='submit'
           className='btn btn-block'
-          disabled={isSubmitting}
+          // disabled={isSubmitting}
         >
-          {isSubmitting ? 'Logging in ...' : 'Submit'}
+          Submit{/* {isSubmitting ? 'Logging in ...' : 'Submit'} */}
         </button>
         <button
           type='button'
