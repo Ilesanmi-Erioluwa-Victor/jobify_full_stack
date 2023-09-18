@@ -21,7 +21,7 @@ app.use(express.json());
 
 app.use('/api/v1/jobs', authenticateUser, jobRoute);
 app.use('/api/v1/auth', authRoute);
-app.use('/api/v1/user', authenticateUser, authRoute);
+app.use('/api/v1/user', authenticateUser, userRoute);
 
 app.use('*', (req, res, next) => {
   res.status(404).json({
