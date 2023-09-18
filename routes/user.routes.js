@@ -8,6 +8,6 @@ import {
 const route = Router();
 route.get('/current-user', getCurrentUser);
 route.get('/admin/app-stats', getApplication);
-route.get('/update-user', updateUser);
+route.patch('/update-user', updateUser);
 
 export default route;
