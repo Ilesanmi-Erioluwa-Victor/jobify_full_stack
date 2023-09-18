@@ -2,15 +2,18 @@ import { Link, Form, useNavigate, redirect } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo } from '../components';
 
-
-export const action = async (data) =>{
-  return null
-}
+export const action = async (data) => {
+  console.log(data);
+  return null;
+};
 
 const Register = () => {
   return (
     <Wrapper>
-      <Form method="post"  className='form'>
+      <Form
+        method='post'
+        className='form'
+      >
         <Logo />
         <h4>Register</h4>
         <FormRow
@@ -22,7 +25,7 @@ const Register = () => {
         <FormRow
           type={'text'}
           name={'lastName'}
-          labelText={"last name"}
+          labelText={'last name'}
           defaultValue={'Ilesnmi'}
         />
 
