@@ -11,8 +11,13 @@ export const getCurrentUser = async (req, res, next) => {
 };
 
 export const getApplication = async (req, res, next) => {
+
   const users = await User.countDocuments();
-  const jobs = await Job.countDocuments();
+    const jobs = await Job.countDocuments();
+
+      if (req.user.role !== 'admin') {
+        throw new Error('Only admin can access this route');
+      }
   res.status(StatusCodes.OK).json({
     users: users,
     jobs: jobs,
