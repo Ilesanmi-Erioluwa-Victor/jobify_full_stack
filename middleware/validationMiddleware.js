@@ -56,16 +56,12 @@ export const validateIdParam = withValidationErrors([
     const isAdmin = req.user.role === 'admin';
     const isUser = req.user.role === 'role';
     const isOwner = req.user.userId.toString() === job.createdBy.toString();
-    
-    if (!isAdmin && !isOwner) {
-      switch (true) {
-        case !isAdmin && !isOwner:
-          throw new Error('not authorized to access this route');
-        case !isUser && !isOwner:
-          throw new Error('not authorized to access this route');
-        default:
-      }
-    }
+
+    if (!isAdmin && !isOwner)
+      throw new Error('not authorized to access this route');
+
+    if (!isUser && !isOwner)
+      throw new Error('not authorized to access this route');
   }),
 ]);
 
