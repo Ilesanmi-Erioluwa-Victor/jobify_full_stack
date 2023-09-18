@@ -2,6 +2,7 @@ import { StatusCodes } from 'http-status-codes';
 import User from '../models/userModel.js';
 import { hashedPassword, comparePassword } from '../utils/Password.js';
 import { UnauthenticatedError } from '../errors/customError.js';
+import { createJwt } from '../utils/Token.js';
 
 export const register = async (req, res, next) => {
   const isFirstAccount = (await User.countDocuments()) === 0;
@@ -24,12 +25,12 @@ export const login = async (req, res, next) => {
     user && (await comparePassword(req.body.password, user.password));
 
   if (!isValidUser) throw new UnauthenticatedError('invalid credential');
-    res.status(StatusCodes.OK).json({
-        status: "success",
-        message: "ok",
-        data: {
-           id: user.id,
-
-        }
-   })
+  const token = await createJwt({ userId: user._id, role: user.role });
+  res.status(StatusCodes.OK).json({
+    status: 'success',
+    message: 'ok',
+    data: {
+      id: user.id,
+    },
+  });
 };
