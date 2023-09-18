@@ -11,7 +11,7 @@ import { authorizePermissions } from '../middleware/auth/authMiddlware.js';
 
 const route = Router();
 route.get('/current-user', getCurrentUser);
-route.get('/admin/app-stats', authorizePermissions('admin'), getApplication);
+route.get('/admin/app-stats', [authorizePermissions('admin'), getApplication]);
 route.patch('/update-user', validateUpdateUserInput, updateUser);
 
 export default route;
