@@ -1,4 +1,4 @@
-import { Link, redirect, useNavigation } from 'react-router-dom';
+import { Link, redirect,Form, useNavigation } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo } from '../components';
 import { customFetch } from 'utils/CustomFetch';
@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <Wrapper>
-      <form className='form'>
+      <Form method='post' className='form'>
         <Logo />
         <h4>login</h4>
         <FormRow
@@ -59,7 +59,7 @@ const Login = () => {
             register
           </Link>
         </p>
-      </form>
+      </Form>
     </Wrapper>
   );
 };
