@@ -8,7 +8,7 @@ dotenv.config();
 
 import jobRoute from './routes/job.routes.js';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
-import authRoute from './routes/user.routes';
+import authRoute from './routes/user.routes.js';
 
 const app = express();
 
