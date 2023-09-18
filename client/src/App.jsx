@@ -39,6 +39,7 @@ const router = createBrowserRouter([
         element: <Register />,
         action: () => {
           console.log("hello from form")
+          return null;
         }
       },
 

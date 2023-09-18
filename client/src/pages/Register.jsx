@@ -5,7 +5,7 @@ import { FormRow, Logo } from '../components';
 const Register = () => {
   return (
     <Wrapper>
-      <form className='form'>
+      <Form method="post"  className='form'>
         <Logo />
         <h4>Register</h4>
         <FormRow
@@ -54,7 +54,7 @@ const Register = () => {
             Login
           </Link>
         </p>
-      </form>
+      </Form>
     </Wrapper>
   );
 };
