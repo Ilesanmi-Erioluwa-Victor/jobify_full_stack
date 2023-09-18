@@ -44,6 +44,14 @@ const AddJob = () => {
             defaultValue={JOB_STATUS.PENDING}
             list={Object.values(JOB_STATUS)}
           />
+
+          <FormRowSelect
+            labelText={'job type'}
+            name={'jobType'}
+            defaultValue={JOB_TYPE.FULL_TIME}
+            list={Object.values(JOB_TYPE)}
+          />
+
           <button
             type='submit'
             className='btn btn-block form-btn'
