@@ -7,3 +7,5 @@ export const createJwt = (payload) => {
 
   return token;
 };
+
+export const verifyJWT = (token) => {};
