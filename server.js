@@ -15,6 +15,7 @@ const app = express();
 
 process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
+app.use(cookieParser())
 app.use(express.json());
 
 app.use('/api/v1/jobs', authenticateUser, jobRoute);
