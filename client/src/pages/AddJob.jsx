@@ -50,6 +50,7 @@ const AddJob = () => {
               id='jobStatus'
               className='form-select'
               defaultValue={JOB_STATUS.PENDING}
+            
             >
               {Object.values(JOB_STATUS).map((itemValue) => {
                 return (
