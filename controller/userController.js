@@ -14,7 +14,8 @@ export const getApplication = async (req, res, next) => {
   const users = await User.countDocuments();
   const jobs = await Job.countDocuments();
   res.status(StatusCodes.OK).json({
-    msg: 'application stats',
+    users: users,
+    jobs: jobs,
   });
 };
 
