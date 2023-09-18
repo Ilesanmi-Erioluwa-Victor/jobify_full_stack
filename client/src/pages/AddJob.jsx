@@ -23,8 +23,11 @@ const AddJob = () => {
         method='post'
       >
         <h4 className='form-title'>add job</h4>
-        <div className="form-center">
-          <FormRow />
+        <div className='form-center'>
+          <FormRow
+            type={'text'}
+            name={'position'}
+          />
         </div>
       </Form>
     </Wrapper>
