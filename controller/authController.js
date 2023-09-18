@@ -1,5 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import User from '../models/userModel.js';
+import bcrypt from "bcryptjs"
 
 export const register = async (req, res, next) => {
     const isFirstAccount = await User.countDocuments() === 0
