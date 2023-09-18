@@ -25,7 +25,7 @@ export const login = async (req, res, next) => {
     user && (await comparePassword(req.body.password, user.password));
 
   if (!isValidUser) throw new UnauthenticatedError('invalid credential');
-  const token = await createJwt({ userId: user._id, role: user.role });
+  const token = createJwt({ userId: user._id, role: user.role });
   res.status(StatusCodes.OK).json({
     status: 'success',
     message: 'ok',
