@@ -4,7 +4,7 @@ import { FormRow, Logo } from '../components';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
-  console.log(formData);
+  const data = Object.fromEntries(formData)
   return null;
 };
 
