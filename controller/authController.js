@@ -5,12 +5,12 @@ import bcrypt from 'bcryptjs';
 export const register = async (req, res, next) => {
   const isFirstAccount = (await User.countDocuments()) === 0;
   req.body.role = isFirstAccount ? 'admin' : 'user';
-  const user = await User.create(req.body);
-
+  
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
-  req.body.password = hashedPassword;
-
+    req.body.password = hashedPassword;
+    
+  const user = await User.create(req.body);
   res.status(StatusCodes.CREATED).json({
     status: 'success',
     message: 'User created',
