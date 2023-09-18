@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
-  
+  const data = Object.fromEntries(formData);
   return null;
 };
 const Login = () => {
