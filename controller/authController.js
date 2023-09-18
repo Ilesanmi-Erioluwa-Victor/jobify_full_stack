@@ -39,3 +39,7 @@ export const login = async (req, res, next) => {
     message: 'user logged in',
   });
 };
+
+export const logout = async (req, res, next) => {
+  
+}
