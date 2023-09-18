@@ -2,11 +2,11 @@ import { Link, useNavigation } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo } from '../components';
 import { customFetch } from 'utils/CustomFetch';
-import { toast } from "react-toastify"
+import { toast } from 'react-toastify';
 
 export const action = async ({ request }) => {
-  
-}
+  return null;
+};
 const Login = () => {
   const navigate = useNavigation();
   const isSubmitting = navigate.state === 'submitting';
