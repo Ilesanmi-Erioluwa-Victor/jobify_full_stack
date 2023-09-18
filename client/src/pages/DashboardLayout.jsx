@@ -3,6 +3,9 @@ import { Outlet } from 'react-router';
 import Wrapper from 'assets/wrappers/Dashboard';
 import { SmallSidebar, BigSidebar, Navbar } from 'components';
 
+export const Loader = () => {
+  return 'Hello world';
+};
 const DashboardContext = createContext();
 
 const DashboardLayout = ({ isDarkThemeEnabled }) => {
