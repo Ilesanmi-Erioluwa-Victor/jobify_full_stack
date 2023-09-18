@@ -3,6 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 
 dotenv.config();
 import { authenticateUser } from './middleware/auth/authMiddlware.js';
