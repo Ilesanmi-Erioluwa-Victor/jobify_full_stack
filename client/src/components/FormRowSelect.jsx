@@ -1,21 +1,19 @@
-
-
-const FormRowSelect = ({name, labelText, list, defaultValue = ""}) => {
+const FormRowSelect = ({ name, labelText, list, defaultValue = '' }) => {
   return (
     <div className='form-row'>
       <label
-        htmlFor='jobStatus'
+        htmlFor={name}
         className='from-label'
       >
-        job status
+        {labelText || name}
       </label>
       <select
-        name='jobStatus'
-        id='jobStatus'
+        name={name}
+        id={name}
         className='form-select'
-        defaultValue={JOB_STATUS.PENDING}
+        defaultValue={defaultValue}
       >
-        {Object.values(JOB_STATUS).map((itemValue) => {
+        {list.map((itemValue) => {
           return (
             <option
               key={itemValue}
@@ -28,7 +26,6 @@ const FormRowSelect = ({name, labelText, list, defaultValue = ""}) => {
       </select>
     </div>
   );
-}
+};
 
-export default FormRowSelect
-
+export default FormRowSelect;
