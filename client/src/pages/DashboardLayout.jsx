@@ -34,9 +34,10 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
     setShowSidebar(!showSidebar);
   };
 
-  const loggedoutUser = async () => {
+  const logoutUser = async () => {
+    console.log('Hiii');
     navigate('/');
-    await customFetch.get('auth/logout');
+    await customFetch.get('/auth/logout');
     toast.success('Logged out successfully');
   };
 
@@ -48,7 +49,7 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
         isDarkTheme,
         toggleDarkTheme,
         toggleSidebar,
-        loggedoutUser,
+        logoutUser,
       }}
     >
       <Wrapper>
