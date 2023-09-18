@@ -28,8 +28,8 @@ export const login = async (req, res, next) => {
         status: "success",
         message: "ok",
         data: {
-            user.id,
-            
+           id: user.id,
+
         }
    })
 };
