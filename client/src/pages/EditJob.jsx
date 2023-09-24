@@ -29,7 +29,7 @@ const EditJob = () => {
   const { data } = useLoaderData();
 
   const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting'
+  const isSubmitting = navigation.state === 'submitting';
   return (
     <Wrapper>
       <Form
@@ -68,7 +68,13 @@ const EditJob = () => {
             defaultValue={data.jobType}
             list={Object.values(JOB_TYPE)}
           />
-          <button type="submit"></button>
+          <button
+            type='submit'
+            className='btn btn-block form-btn'
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "submitting ..." : "submit"}
+          </button>
         </div>
       </Form>
     </Wrapper>
