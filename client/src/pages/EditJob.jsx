@@ -11,6 +11,9 @@ import { JOB_STATUS, JOB_TYPE } from '../../../utils/constant';
 import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
 
+export const loader = async () => {};
+
+export const action = async () => {};
 
 const EditJob = () => {
   const { id } = useParams();
