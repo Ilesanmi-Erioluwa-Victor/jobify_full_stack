@@ -42,6 +42,8 @@ const Job = ({
             icon={<FaBriefcase />}
             text={jobType}
           />
+
+          <div className={`status ${jobStatus}`}>{jobStatus}</div>
         </div>
       </div>
     </Wrapper>
