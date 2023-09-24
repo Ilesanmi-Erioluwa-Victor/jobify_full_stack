@@ -12,7 +12,20 @@ const JobsContainer = () => {
       </Wrapper>
     );
   }
-  return <h2>JobsContainer</h2>;
+  return (
+    <Wrapper>
+      <div className='jobs'>
+        {jobResult.map((job) => {
+          return (
+            <Job
+              key={job.id}
+              {...job}
+            />
+          );
+        })}
+      </div>
+    </Wrapper>
+  );
 };
 
 export default JobsContainer;
