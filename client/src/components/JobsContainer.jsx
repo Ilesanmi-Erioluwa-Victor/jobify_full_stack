@@ -4,7 +4,7 @@ import Wrapper from 'assets/wrappers/JobsContainer';
 
 const JobsContainer = () => {
   const { data } = useAllJobsContext();
-  console.log('++++++++++++', data.data);
+
   if (!data.data.length) {
     return (
       <Wrapper>
