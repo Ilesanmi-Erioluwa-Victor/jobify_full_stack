@@ -1,4 +1,4 @@
-import { Form, Link, useParams } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 import day from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import JobInfo from './JobInfo';
@@ -15,7 +15,7 @@ const Job = ({
   jobType,
   position,
 }) => {
-  const { id } = useParams();
+ 
   const date = day(createdAt).format('MMM Do, YYYY');
   return (
     <Wrapper>
@@ -48,7 +48,7 @@ const Job = ({
           <footer className='actions'>
             <Link
               className='btn edit-btn'
-              to={`../edit-job${id}`}
+              to={`../edit-job${_id}`}
             >
               Edit
             </Link>
