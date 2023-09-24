@@ -48,7 +48,7 @@ const Job = ({
           <footer className='actions'>
             <Link
               className='btn edit-btn'
-              to={`../edit-job${_id}`}
+              to={`../edit-job/${_id}`}
             >
               Edit
             </Link>
