@@ -16,6 +16,7 @@ export const loader = async () => {
 
 const AllJobs = () => {
   const { data } = useLoaderData();
+
   return (
     <>
       <SearchContainer />
