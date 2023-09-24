@@ -27,8 +27,20 @@ export const action = async () => {
 
 const EditJob = () => {
   const { data } = useLoaderData();
-  console.log(data)
-  return <div>EditJob</div>;
+
+  return (
+    <Wrapper>
+      <Form
+        method='post'
+        className='form'
+      >
+        <h4 className='form-title'>edit job</h4>
+        <div className="form-center">
+          <FormRow type={"text"} name={"position"} defaultValue={data.position}/>
+        </div>
+      </Form>
+    </Wrapper>
+  );
 };
 
 export default EditJob;
