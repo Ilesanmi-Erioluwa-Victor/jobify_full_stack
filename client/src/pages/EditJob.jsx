@@ -35,8 +35,23 @@ const EditJob = () => {
         className='form'
       >
         <h4 className='form-title'>edit job</h4>
-        <div className="form-center">
-          <FormRow type={"text"} name={"position"} defaultValue={data.position}/>
+        <div className='form-center'>
+          <FormRow
+            type={'text'}
+            name={'position'}
+            defaultValue={data.position}
+          />
+          <FormRow
+            type={'text'}
+            name={'company'}
+            defaultValue={data.company}
+          />
+          <FormRow
+            type={'text'}
+            name={'jobLocation'}
+            labelText={'job location'}
+            defaultValue={data.jobLocation}
+          />
         </div>
       </Form>
     </Wrapper>
