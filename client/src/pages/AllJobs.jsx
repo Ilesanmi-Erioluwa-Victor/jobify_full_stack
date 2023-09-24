@@ -16,7 +16,12 @@ export const loader = async () => {
 
 const AllJobs = () => {
   const { data } = useLoaderData();
-  return <div>AllJobs</div>;
+  return (
+    <>
+      <SearchContainer />
+      <JobsContainer />
+    </>
+  );
 };
 
 export default AllJobs;
