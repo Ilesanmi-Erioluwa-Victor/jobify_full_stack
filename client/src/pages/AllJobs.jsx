@@ -26,4 +26,5 @@ const AllJobs = () => {
   );
 };
 
+export const useAllJobsContext = () => useContext(AllJobsContext)
 export default AllJobs;
