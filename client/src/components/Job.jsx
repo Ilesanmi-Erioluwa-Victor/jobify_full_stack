@@ -1,4 +1,4 @@
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useParams } from 'react-router-dom';
 import day from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import JobInfo from './JobInfo';
@@ -15,6 +15,7 @@ const Job = ({
   jobType,
   position,
 }) => {
+  const { id } = useParams();
   const date = day(createdAt).format('MMM Do, YYYY');
   return (
     <Wrapper>
@@ -43,15 +44,23 @@ const Job = ({
             text={jobType}
           />
 
-                  <div className={`status ${jobStatus}`}>{jobStatus}</div>
-                  <footer className='actions'>
-                      <Link className='btn edit-btn' to={`../edit-job${_id}`}>Edit</Link>
-                      <Form>
-                          <button type="submit" className='btn delete-btn'>
-                              Delete
-                          </button>
-                      </Form>
-                  </footer>    
+          <div className={`status ${jobStatus}`}>{jobStatus}</div>
+          <footer className='actions'>
+            <Link
+              className='btn edit-btn'
+              to={`../edit-job${id}`}
+            >
+              Edit
+            </Link>
+            <Form>
+              <button
+                type='submit'
+                className='btn delete-btn'
+              >
+                Delete
+              </button>
+            </Form>
+          </footer>
         </div>
       </div>
     </Wrapper>

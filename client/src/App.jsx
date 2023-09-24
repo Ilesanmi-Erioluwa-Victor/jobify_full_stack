@@ -67,7 +67,7 @@ const router = createBrowserRouter([
           },
 
           {
-            path: 'edit-job',
+            path: 'edit-job/:id',
             element: <EditJob />,
           },
 
