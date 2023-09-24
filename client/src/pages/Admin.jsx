@@ -16,7 +16,12 @@ export const loader = async () => {
   }
 };
 const Admin = () => {
-  return <Wrapper>AdminPage</Wrapper>;
+  const { users, jobs } = useLoaderData();
+  return (
+    <Wrapper>
+      <h1>admin page</h1>
+    </Wrapper>
+  );
 };
 
 export default Admin;
