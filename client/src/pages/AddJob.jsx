@@ -14,7 +14,10 @@ import { customFetch } from 'utils/CustomFetch';
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  return null;
+  try {
+    await customFetch.post('/jobs', data);
+    toast.success('Job added successfully');
+  } catch (error) {}
 };
 
 const AddJob = () => {
