@@ -4,8 +4,8 @@ import Wrapper from 'assets/wrappers/JobsContainer';
 
 const JobsContainer = () => {
   const { data } = useAllJobsContext();
-  const jobResult = data;
-  if (!jobResult.length) {
+  console.log('++++++++++++', data.data);
+  if (!data.data.length) {
     return (
       <Wrapper>
         <h2>No jobs to display</h2>
@@ -15,10 +15,10 @@ const JobsContainer = () => {
   return (
     <Wrapper>
       <div className='jobs'>
-        {jobResult.map((job) => {
+        {data.data.map((job) => {
           return (
             <Job
-              key={job.id}
+              key={job._id}
               {...job}
             />
           );

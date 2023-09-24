@@ -1,11 +1,5 @@
-
 const Job = () => {
-  return (
-    <h3>
-      
-    </h3>
-  )
-}
+  return <h3>JOB</h3>;
+};
 
-export default Job
-
+export default Job;
