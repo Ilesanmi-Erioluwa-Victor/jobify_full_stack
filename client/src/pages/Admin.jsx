@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 import { customFetch } from 'utils/CustomFetch';
 import Wrapper from 'assets/wrappers/StatsContainer';
-import { FaSuitcaseRolling, FaCalenderCheck } from 'react-icons/fa';
+import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa';
 
 export const loader = async () => {
   try {
@@ -17,6 +17,7 @@ export const loader = async () => {
 };
 const Admin = () => {
   const { users, jobs } = useLoaderData();
+  console.log(useLoaderData());
   return (
     <Wrapper>
       <h1>admin page</h1>
