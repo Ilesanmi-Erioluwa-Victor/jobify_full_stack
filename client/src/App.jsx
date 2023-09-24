@@ -24,6 +24,7 @@ import {
   action as editJobAction,
   loader as editJobLoader,
 } from 'pages/EditJob';
+import { action as deleteJobAction } from 'pages/DeleteJob';
 
 const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
@@ -87,7 +88,8 @@ const router = createBrowserRouter([
             element: <Profile />,
           },
           {
-            path : "delete-job/:id"
+            path: 'delete-job/:id',
+            action: deleteJobAction,
           },
 
           {
