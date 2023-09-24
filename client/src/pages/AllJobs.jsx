@@ -5,8 +5,15 @@ import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
 
 export const loader = async () => {
-  return null;
+  try {
+    const { data } = await customFetch.get('/jobs');
+    return { data };
+  } catch (error) {
+    toast.error(error?.response?.data.msg);
+    return error;
+  }
 };
+
 const AllJobs = () => {
   return <div>AllJobs</div>;
 };
