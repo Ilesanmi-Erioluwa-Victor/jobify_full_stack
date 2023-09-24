@@ -4,6 +4,7 @@ import advancedFormat from 'dayjs/plugin/advancedFormat';
 import JobInfo from './JobInfo';
 import { FaLocationArrow, FaBriefcase, FaCalenderAlt } from 'react-icons/fa';
 import Wrapper from 'assets/wrappers/Job';
+day.extend(advancedFormat);
 
 const Job = () => {
   return <h3>JOB</h3>;
