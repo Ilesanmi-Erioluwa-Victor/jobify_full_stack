@@ -15,7 +15,6 @@ const Job = ({
   jobType,
   position,
 }) => {
- 
   const date = day(createdAt).format('MMM Do, YYYY');
   return (
     <Wrapper>
@@ -52,7 +51,10 @@ const Job = ({
             >
               Edit
             </Link>
-            <Form>
+            <Form
+              method='post'
+              action={`../delete-job${_id}`}
+            >
               <button
                 type='submit'
                 className='btn delete-btn'

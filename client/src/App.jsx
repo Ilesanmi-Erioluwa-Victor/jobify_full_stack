@@ -86,6 +86,9 @@ const router = createBrowserRouter([
             path: 'profile',
             element: <Profile />,
           },
+          {
+            path : "delete-job/:id"
+          },
 
           {
             path: 'stats',
