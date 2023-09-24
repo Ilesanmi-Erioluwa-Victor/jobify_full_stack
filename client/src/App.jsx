@@ -17,8 +17,8 @@ import {
 } from './pages';
 import { action as registerAction } from 'pages/Register';
 import { action as loginAction } from 'pages/Login';
-import { Loader as DashboardLoader} from 'pages/DashboardLayout';
-
+import { Loader as DashboardLoader } from 'pages/DashboardLayout';
+import { action as addJobAction } from 'pages/AddJob';
 const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
   document.body.classList.toggle('dark-theme', isDarkTheme);
