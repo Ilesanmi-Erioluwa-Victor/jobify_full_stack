@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
 import Wrapper from 'assets/wrappers/StatsContainer';
 import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa';
+import { StatItem } from 'components';
 
 export const loader = async () => {
   try {
@@ -19,7 +20,11 @@ const Admin = () => {
   const { users, jobs } = useLoaderData();
   return (
     <Wrapper>
-      <h1>admin page</h1>
+      <StatItem
+        title={'current users'}
+        count={users}
+        color={'#e9b949'}
+      />
     </Wrapper>
   );
 };
