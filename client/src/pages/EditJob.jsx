@@ -52,6 +52,13 @@ const EditJob = () => {
             labelText={'job location'}
             defaultValue={data.jobLocation}
           />
+
+          <FormRowSelect
+            name={'jobStatus'}
+            labelText={'job status'}
+            defaultValue={data.jobStatus}
+            list={Object.values(JOB_STATUS)}
+          />
         </div>
       </Form>
     </Wrapper>
