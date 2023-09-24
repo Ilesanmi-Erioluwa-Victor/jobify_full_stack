@@ -61,6 +61,7 @@ const router = createBrowserRouter([
           {
             element: <AddJob />,
             index: true,
+            action: addJobAction,
           },
 
           {

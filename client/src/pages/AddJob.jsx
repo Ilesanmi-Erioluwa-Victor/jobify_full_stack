@@ -11,9 +11,11 @@ import Wrapper from '../assets/wrappers/DashboardFormPage';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constant';
 import { customFetch } from 'utils/CustomFetch';
 
-export const action = async ({request}) =>{
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
   return null;
-}
+};
 
 const AddJob = () => {
   const { user } = useOutletContext();
