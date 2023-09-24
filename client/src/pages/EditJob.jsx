@@ -28,6 +28,8 @@ export const action = async () => {
 const EditJob = () => {
   const { data } = useLoaderData();
 
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === 'submitting'
   return (
     <Wrapper>
       <Form
@@ -66,6 +68,7 @@ const EditJob = () => {
             defaultValue={data.jobType}
             list={Object.values(JOB_TYPE)}
           />
+          <button type="submit"></button>
         </div>
       </Form>
     </Wrapper>
