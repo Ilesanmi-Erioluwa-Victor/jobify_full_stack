@@ -12,11 +12,12 @@ import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
 
 export const loader = async ({ params }) => {
-try {
-    const { data } = await customFetch.get(`/jobs/${params.id}`)
-} catch (error) {
-  
-}
+  try {
+    const { data } = await customFetch.get(`/jobs/${params.id}`);
+    return data;
+  } catch (error) {
+    toast.error(error?.response?.data?.msg);
+  }
 };
 
 export const action = async () => {
