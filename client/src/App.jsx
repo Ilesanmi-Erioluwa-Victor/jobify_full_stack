@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import {
   Admin,
   DashboardLayout,
-  DeleteJob,
   EditJob,
   AddJob,
   AllJobs,
@@ -78,10 +77,10 @@ const router = createBrowserRouter([
             loader: editJobLoader,
           },
 
-          {
-            path: 'delete-job',
-            element: <DeleteJob />,
-          },
+          // {
+          //   path: 'delete-job',
+          //   element: <DeleteJob />,
+          // },
 
           {
             path: 'profile',

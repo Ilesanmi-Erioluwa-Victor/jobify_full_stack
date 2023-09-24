@@ -10,5 +10,10 @@ export const action = async ({ params }) => {
     toast.error(error?.response?.data?.msg);
   }
 
-  return redirect(`dashboard/all-jobs`);
+  return redirect(`/dashboard/all-jobs`);
 };
+// const DeleteJob = () => {
+//   return <div>DeleteJob</div>;
+// };
+
+// export default DeleteJob;
