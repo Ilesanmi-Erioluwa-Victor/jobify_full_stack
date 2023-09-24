@@ -17,6 +17,7 @@ export const loader = async ({ params }) => {
     return data;
   } catch (error) {
     toast.error(error?.response?.data?.msg);
+    return redirect(`/dashboard/all-jobs`);
   }
 };
 
@@ -25,7 +26,8 @@ export const action = async () => {
 };
 
 const EditJob = () => {
-  const { id } = useParams();
+  const { data } = useLoaderData();
+  console.log(data)
   return <div>EditJob</div>;
 };
 
