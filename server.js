@@ -5,10 +5,16 @@ import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 
+import { dirname } from "path"
+import { fileURLToPath } from 'url';
+import path from "path"
+
 dotenv.config();
+
 import { authenticateUser } from './middleware/auth/authMiddlware.js';
-import jobRoute from './routes/job.routes.js';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
+
+import jobRoute from './routes/job.routes.js';
 import authRoute from './routes/auth.routes.js';
 import userRoute from './routes/user.routes.js';
 
