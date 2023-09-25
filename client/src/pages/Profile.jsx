@@ -16,10 +16,13 @@ export const action = async ({ request }) => {
   }
 
   try {
-    
+    await customFetch.patch('/users/update-user', formData);
+    toast.success('Profile updated successfully');
   } catch (error) {
     
   }
+
+  return null;
 };
 
 const Profile = () => {
