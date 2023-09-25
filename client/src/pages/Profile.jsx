@@ -63,6 +63,14 @@ const Profile = () => {
             name={'location'}
             defaultValue={location}
           />
+
+          <button
+            type='submit'
+            className='btn btn-block form-btn'
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'submitting' : 'submit'}
+          </button>
         </div>
       </Form>
     </Wrapper>
