@@ -5,9 +5,9 @@ import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 
-import { dirname } from "path"
+import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import path from "path"
+import path from 'path';
 
 dotenv.config();
 
@@ -22,6 +22,7 @@ const app = express();
 
 process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(cookieParser());
 app.use(express.json());
 
