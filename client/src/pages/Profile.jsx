@@ -12,7 +12,17 @@ const Profile = () => {
   const navigation = useNavigation();
 
   const isSubmitting = navigation.state === 'submitting';
-  return <Wrapper>Profile</Wrapper>;
+
+  return (
+    <Wrapper>
+      <Form
+        method='post'
+        className='form'
+      >
+        <h4 className='form-title'>profile</h4>
+      </Form>
+    </Wrapper>
+  );
 };
 
 export default Profile;
