@@ -29,6 +29,13 @@ const Profile = () => {
             >
               Select an image file (max 0.5MB)
             </label>
+            <input
+              type='file'
+              name='avatar'
+              id='avatar'
+              className='form-input'
+              accept='image/*'
+            />
           </div>
 
           <FormRow
