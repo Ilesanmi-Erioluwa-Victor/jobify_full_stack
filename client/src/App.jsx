@@ -25,6 +25,7 @@ import {
 } from 'pages/EditJob';
 import { action as deleteJobAction } from 'pages/DeleteJob';
 import { loader as adminLoader } from 'pages/Admin';
+import { action as profileLoader} from 'pages/Profile';
 
 const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
