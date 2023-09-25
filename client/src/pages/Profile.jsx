@@ -20,6 +20,14 @@ const Profile = () => {
         className='form'
       >
         <h4 className='form-title'>profile</h4>
+
+        <div className='form-center'>
+          <FormRow
+            type={'text'}
+            name={'name'}
+            defaultValue={name}
+          />
+        </div>
       </Form>
     </Wrapper>
   );
