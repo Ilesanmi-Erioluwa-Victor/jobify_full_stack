@@ -9,9 +9,9 @@ const Profile = () => {
 
   const { name, lastName, email, location } = user;
 
-  const naviagtion = useNavigation();
+  const navigation = useNavigation();
 
-  const isSubmitting = naviagtion.state === 'submitting';
+  const isSubmitting = navigation.state === 'submitting';
   return <Wrapper>Profile</Wrapper>;
 };
 
