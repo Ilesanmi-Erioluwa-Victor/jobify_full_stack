@@ -22,6 +22,15 @@ const Profile = () => {
         <h4 className='form-title'>profile</h4>
 
         <div className='form-center'>
+          <div className='form-row'>
+            <label
+              htmlFor='avatar'
+              className='form-label'
+            >
+              Select an image file (max 0.5MB)
+            </label>
+          </div>
+
           <FormRow
             type={'text'}
             name={'name'}
