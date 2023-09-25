@@ -8,10 +8,16 @@ import {
 
 import { validateUpdateUserInput } from '../middleware/validationMiddleware.js';
 import { authorizePermissions } from '../middleware/auth/authMiddlware.js';
+import upload from '../middleware/multerMiddleware.js';
 
 const route = Router();
 route.get('/current-user', getCurrentUser);
 route.get('/admin/app-stats', [authorizePermissions('admin'), getApplication]);
-route.patch('/update-user', validateUpdateUserInput, updateUser);
+route.patch(
+  '/update-user',
+  upload.single("avatar"),
+  validateUpdateUserInput,
+  updateUser
+);
 
 export default route;
