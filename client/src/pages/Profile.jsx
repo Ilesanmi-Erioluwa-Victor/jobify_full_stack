@@ -4,13 +4,9 @@ import { Form, useNavigation, useOutletContext } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
 
-export const action = async () => { 
-  try {
-    
-  } catch (error) {
-    
-  }
-}
+export const action = async ({ request }) => {
+  const formData = await request.formData();
+};
 
 const Profile = () => {
   const { user } = useOutletContext();
