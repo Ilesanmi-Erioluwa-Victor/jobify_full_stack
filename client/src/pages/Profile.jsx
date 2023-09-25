@@ -7,6 +7,8 @@ import { customFetch } from 'utils/CustomFetch';
 const Profile = () => {
   const { user } = useOutletContext();
 
+  const { name, lastName, email, location } = user;
+
   return <Wrapper>Profile</Wrapper>;
 };
 
