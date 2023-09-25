@@ -6,6 +6,20 @@ import { customFetch } from 'utils/CustomFetch';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
+
+  // check for image
+  const file = formData.get('avatar');
+
+  if (file && file.size > 500000) {
+    toast.error('Image size too large');
+    return null;
+  }
+
+  try {
+    
+  } catch (error) {
+    
+  }
 };
 
 const Profile = () => {
