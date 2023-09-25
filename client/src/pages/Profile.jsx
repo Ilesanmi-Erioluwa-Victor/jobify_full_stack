@@ -31,7 +31,7 @@ const Profile = () => {
           <FormRow
             type={'text'}
             name={'lastName'}
-            labelText={"last name"}
+            labelText={'last name'}
             defaultValue={lastName}
           />
 
@@ -43,8 +43,8 @@ const Profile = () => {
 
           <FormRow
             type={'text'}
-            name={'name'}
-            defaultValue={name}
+            name={'location'}
+            defaultValue={location}
           />
         </div>
       </Form>
