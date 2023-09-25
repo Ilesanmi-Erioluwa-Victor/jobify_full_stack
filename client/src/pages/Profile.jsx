@@ -18,6 +18,7 @@ const Profile = () => {
       <Form
         method='post'
         className='form'
+        encType='multipart/form-data'
       >
         <h4 className='form-title'>profile</h4>
 
