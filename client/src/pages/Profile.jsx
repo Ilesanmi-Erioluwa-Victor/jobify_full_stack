@@ -27,6 +27,25 @@ const Profile = () => {
             name={'name'}
             defaultValue={name}
           />
+
+          <FormRow
+            type={'text'}
+            name={'lastName'}
+            labelText={"last name"}
+            defaultValue={lastName}
+          />
+
+          <FormRow
+            type={'email'}
+            name={'email'}
+            defaultValue={email}
+          />
+
+          <FormRow
+            type={'text'}
+            name={'name'}
+            defaultValue={name}
+          />
         </div>
       </Form>
     </Wrapper>
