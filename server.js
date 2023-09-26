@@ -19,12 +19,6 @@ import jobRoute from './routes/job.routes.js';
 import authRoute from './routes/auth.routes.js';
 import userRoute from './routes/user.routes.js';
 
-cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.CLOUD_API_KEY,
-  api_secret: process.env.CLOUD_API_SECRET,
-});
-
 const app = express();
 
 process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
@@ -34,6 +28,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.resolve(__dirname, './public')));
 app.use(cookieParser());
 app.use(express.json());
+
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 
 app.use('/api/v1/jobs', authenticateUser, jobRoute);
 app.use('/api/v1/auth', authRoute);
