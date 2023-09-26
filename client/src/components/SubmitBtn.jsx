@@ -1,10 +1,10 @@
-
-const SubmitBtn = () => {
+const SubmitBtn = ({ formBtn }) => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <button
+      type='submit'
+      className={`btn btn-block ${formBtn && 'form-btn'}`}
+    ></button>
+  );
+};
 
-export default SubmitBtn
+export default SubmitBtn;
