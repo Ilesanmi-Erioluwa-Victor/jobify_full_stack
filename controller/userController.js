@@ -27,7 +27,9 @@ export const updateUser = async (req, res, next) => {
 
   if (req.file) {
     const response = await cloudinary.v2.uploader.upload(req.file.path);
+    await fs.unlink(req.file.path);
   }
+
   const updatedUser = await User.findByIdAndUpdate(req.user.userId, obj);
   res.status(StatusCodes.OK).json({
     msg: 'update user',
