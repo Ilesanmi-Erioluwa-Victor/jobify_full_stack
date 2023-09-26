@@ -1,4 +1,4 @@
-import { Link, redirect, Form, useActionData } from 'react-router-dom';
+import { Link, redirect, Form, useNavigate } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { FormRow, Logo, SubmitBtn } from '../components';
 import { customFetch } from 'utils/CustomFetch';
@@ -25,7 +25,19 @@ export const action = async ({ request }) => {
   }
 };
 const Login = () => {
-  const errors = useActionData();
+  const navigate = useNavigate();
+
+  const loginDemoUser = async () => {
+    const data = {
+      email: "test@test.com",
+      password : 
+    }
+    try {
+      
+    } catch (error) {
+      
+    }
+  }
   return (
     <Wrapper>
       <Form
@@ -34,7 +46,7 @@ const Login = () => {
       >
         <Logo />
         <h4>login</h4>
-        {errors?.msg && <p style={{ color: 'red' }}>{errors?.msg}</p>}
+
         <FormRow
           type={'email'}
           name={'email'}
