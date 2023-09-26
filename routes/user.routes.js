@@ -1,5 +1,4 @@
 import { Router } from 'express';
-
 import {
   getCurrentUser,
   getApplication,
@@ -7,7 +6,10 @@ import {
 } from '../controller/userController.js';
 
 import { validateUpdateUserInput } from '../middleware/validationMiddleware.js';
-import { authorizePermissions } from '../middleware/auth/authMiddlware.js';
+import {
+  authorizePermissions,
+  checkForTestUser,
+} from '../middleware/auth/authMiddlware.js';
 import upload from '../middleware/multerMiddleware.js';
 
 const route = Router();
