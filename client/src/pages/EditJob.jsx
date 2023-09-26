@@ -1,12 +1,6 @@
 import Wrapper from 'assets/wrappers/DashboardFormPage';
 import { FormRow, FormRowSelect } from 'components';
-import {
-  Form,
-  redirect,
-  useLoaderData,
-  useNavigation,
-  useParams,
-} from 'react-router-dom';
+import { Form, redirect, useLoaderData, useParams } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constant';
 import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
@@ -30,16 +24,14 @@ export const action = async ({ request, params }) => {
     toast.success('Job edited successfully');
     return redirect('/dashboard/all-jobs');
   } catch (error) {
-   toast.error(error?.response?.data?.msg)
-    return error
+    toast.error(error?.response?.data?.msg);
+    return error;
   }
 };
 
 const EditJob = () => {
   const { data } = useLoaderData();
 
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
   return (
     <Wrapper>
       <Form
@@ -78,13 +70,7 @@ const EditJob = () => {
             defaultValue={data.jobType}
             list={Object.values(JOB_TYPE)}
           />
-          <button
-            type='submit'
-            className='btn btn-block form-btn'
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'submitting ...' : 'submit'}
-          </button>
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>
