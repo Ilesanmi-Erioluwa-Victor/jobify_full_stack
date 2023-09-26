@@ -1,6 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 import User from '../models/userModel.js';
 import Job from '../models/jobModel.js';
+import cloudinary from 'cloudinary';
+import { promises as fs } from 'fs';
 
 export const getCurrentUser = async (req, res, next) => {
   const user = await User.findOne({ _id: req.user.userId });
@@ -20,7 +22,6 @@ export const getApplication = async (req, res, next) => {
 };
 
 export const updateUser = async (req, res, next) => {
-  console.log(req.file);
   const obj = { ...req.body };
   delete obj.password;
   const updatedUser = await User.findByIdAndUpdate(req.user.userId, obj);
