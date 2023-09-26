@@ -30,7 +30,7 @@ export const updateUser = async (req, res, next) => {
     await fs.unlink(req.file.path);
   }
 
-  const updatedUser = await User.findByIdAndUpdate(req.user.userId, obj);
+  const updatedUser = await User.findByIdAndUpdate(req.user.userId, newUser);
   res.status(StatusCodes.OK).json({
     msg: 'update user',
   });
