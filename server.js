@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
+import cloudinary from "cloudinary"
 
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
