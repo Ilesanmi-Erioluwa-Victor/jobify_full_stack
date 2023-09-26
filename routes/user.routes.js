@@ -15,7 +15,8 @@ route.get('/current-user', getCurrentUser);
 route.get('/admin/app-stats', [authorizePermissions('admin'), getApplication]);
 route.patch(
   '/update-user',
-  upload.single("avatar"),
+  checkForTestUser,
+  upload.single('avatar'),
   validateUpdateUserInput,
   updateUser
 );
