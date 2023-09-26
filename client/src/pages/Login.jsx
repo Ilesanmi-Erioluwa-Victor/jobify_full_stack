@@ -64,6 +64,7 @@ const Login = () => {
         <button
           type='button'
           className='btn btn-block'
+          onClick={loginDemoUser}
         >
           explore the app
         </button>
