@@ -14,6 +14,14 @@ try {
     await readFile(new URL('./utils/MOCK_DATA.json', import.meta.url))
   );
   const jobs = jsonJob.map((job) => {
-    return { ...job, createdBy: user_id };
+    return { ...job, createdBy: user._id };
   });
-} catch (error) {}
+  await Job.deleteMany({ createdBy: user._id });
+  await Job.create(jobs);
+
+  console.log('success');
+  process.exit(0);
+} catch (error) {
+  console.log(error);
+  process.exist(1);
+}
