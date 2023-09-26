@@ -22,8 +22,8 @@ export const getApplication = async (req, res, next) => {
 };
 
 export const updateUser = async (req, res, next) => {
-  const obj = { ...req.body };
-  delete obj.password;
+  const newUser = { ...req.body };
+  delete newUser.password;
 
   if (req.file) {
     const response = await cloudinary.v2.uploader.upload(req.file.path);
