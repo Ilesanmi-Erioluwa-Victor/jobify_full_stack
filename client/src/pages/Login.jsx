@@ -29,15 +29,17 @@ const Login = () => {
 
   const loginDemoUser = async () => {
     const data = {
-      email: "test@test.com",
-      password : 
-    }
+      email: 'test@test.com',
+      password: 'secret123',
+    };
     try {
-      
+      await customFetch.post('/auth/login', data);
+      toast.success('take a test drive');
+      navigate('/dashboard');
     } catch (error) {
-      
+      toast.error(error?.response?.data?.msg);
     }
-  }
+  };
   return (
     <Wrapper>
       <Form
