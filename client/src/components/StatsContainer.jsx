@@ -25,7 +25,7 @@ const StatsContainer = ({ defaultStats }) => {
       count: defaultStats?.declined || 0,
       icon: <FaBug />,
       color: '#d66a6a',
-      bcg: '#fef3c7',
+      bcg: '#ffeeee',
     },
   ];
   return (
