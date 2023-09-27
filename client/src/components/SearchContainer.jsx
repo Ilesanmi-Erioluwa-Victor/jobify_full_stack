@@ -12,9 +12,13 @@ const SearchContainer = () => {
   const submit = useSubmit();
 
   const debounce = (onChange) => {
+    let timeout;
     return (e) => {
       const form = e.currentTarget.form;
-      onChange(form);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        onChange(form);
+      }, 2000);
     };
   };
   return (
