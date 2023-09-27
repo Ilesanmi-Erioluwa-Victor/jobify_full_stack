@@ -9,11 +9,26 @@ const SearchContainer = () => {
     <Wrapper>
       <Form className='form'>
         <h5 className='form-title'>search form</h5>
-       
-        <div className="form-center">
-          <FormRow type={"search"} name={"search"} defaultValue={"a"}/>
-          <FormRowSelect labelText={"job status"} name={"jobStatus"} list={}/>
-        
+
+        <div className='form-center'>
+          <FormRow
+            type={'search'}
+            name={'search'}
+            defaultValue={'a'}
+          />
+          <FormRowSelect
+            labelText={'job status'}
+            name={'jobStatus'}
+            list={['all', Object.values(JOB_STATUS)]}
+            defaultValue='all'
+          />
+
+          <FormRowSelect
+            labelText={'job type'}
+            name={'jobType'}
+            list={['all', Object.values(JOB_TYPE)]}
+            defaultValue='all'
+          />
         </div>
       </Form>
     </Wrapper>
