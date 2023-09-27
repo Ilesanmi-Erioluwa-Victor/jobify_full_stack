@@ -27,6 +27,9 @@ const SearchContainer = () => {
             name={'jobStatus'}
             list={['all', ...Object.values(JOB_STATUS)]}
             defaultValue='all'
+            onChange={(e) => {
+              submit(e.currentTarget.form);
+            }}
           />
 
           <FormRowSelect
@@ -34,12 +37,18 @@ const SearchContainer = () => {
             name={'jobType'}
             list={['all', ...Object.values(JOB_TYPE)]}
             defaultValue='all'
+            onChange={(e) => {
+              submit(e.currentTarget.form);
+            }}
           />
 
           <FormRowSelect
             name={'sort'}
             list={[...Object.values(JOB_SORT_BY)]}
             defaultValue='newest'
+            onChange={(e) => {
+              submit(e.currentTarget.form);
+            }}
           />
           <Link
             to={'/dashboard/all-jobs'}
@@ -47,7 +56,6 @@ const SearchContainer = () => {
           >
             Reset Search Values
           </Link>
-          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>
