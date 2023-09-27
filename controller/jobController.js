@@ -15,6 +15,10 @@ export const getAllJobs = async (req, res, next) => {
       {
         position: { $regex: search, $options: 'i' },
       },
+
+      {
+        company: { $regex: search, $options: 'i' },
+      },
     ];
   }
 
