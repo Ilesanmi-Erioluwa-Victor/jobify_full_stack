@@ -51,7 +51,13 @@ export const showStats = async (req, res, next) => {
     { $group: { _id: '$jobStatus', count: { $sum: 1 } } },
   ]);
 
-  console.log(stats);
+  stats = stats.reduce((acc, curr) => {
+    const { _id: title, count } = curr;
+
+    acc[title] = count
+
+    return acc;
+  }, {});
 
   const defaultStats = {
     pending: 22,
