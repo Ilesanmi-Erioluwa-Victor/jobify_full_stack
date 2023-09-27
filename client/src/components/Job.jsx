@@ -16,6 +16,16 @@ const Job = ({
   position,
 }) => {
   const date = day(createdAt).format('MMM Do, YYYY');
+
+  console.log(
+    _id,
+    company,
+    createdAt,
+    jobLocation,
+    jobStatus,
+    jobType,
+    position
+  );
   return (
     <Wrapper>
       <header>
