@@ -71,6 +71,8 @@ export const showStats = async (req, res, next) => {
         count: { $sum: 1 },
       },
     },
+
+    { $sort : {"_id.year" : -1, "_id.month" : -1 }}
   ]);
 
   console.log(monthlyApplication);
