@@ -8,8 +8,8 @@ import {
   Tooltip
 } from "recharts" 
 
-const AreaChat = () => {
-  return <div>AreaChat</div>;
+const AreaChat = ({data}) => {
+  return <ResponsiveContainer />;
 };
 
 export default AreaChat;
