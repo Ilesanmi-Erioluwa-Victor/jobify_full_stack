@@ -30,6 +30,13 @@ export const getAllJobs = async (req, res, next) => {
     queryObject.jobType = jobType;
   }
 
+  const sortOption = {
+    newest: '-createdAt',
+    oldest: 'createdAt',
+    'a-z': 'position',
+    'z-a': '-position',
+  };
+
   const jobs = await Job.find(queryObject);
   res.status(StatusCodes.OK).json({
     length: jobs.length,
