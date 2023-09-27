@@ -12,7 +12,13 @@ const PageBtnContainer = () => {
     return index + 1;
   });
 
-  const handlePageChange = (pageNumber) => {};
+  const { search, pathname } = useLocation()
+
+  const navigate = useNavigate()
+  
+  const handlePageChange = (pageNumber) => {
+
+  };
   return (
     <Wrapper>
       <button
