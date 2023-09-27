@@ -38,13 +38,11 @@ cloudinary.config({
 app.use('/api/v1/jobs', authenticateUser, jobRoute);
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', authenticateUser, userRoute);
-app.get('/api/v1/test', (req, res, next) => {
-  console.log(
-    res.status(200).json({
-      msg: 'Hello world',
-    })
-  );
+
+app.get('*', (req, res, next) => {
+  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
 });
+
 app.use('*', (req, res, next) => {
   res.status(404).json({
     message: 'This route is not Found',
