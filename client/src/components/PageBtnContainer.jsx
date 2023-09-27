@@ -86,7 +86,7 @@ const PageBtnContainer = () => {
         pageButtons.push(
           <span
             className='page-btn dots'
-            key={'dots-1'}
+            key={'dots+1'}
           >
             {' '}
             ...{' '}
