@@ -1,4 +1,6 @@
-const StatsContainer = () => {
+import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa';
+
+const StatsContainer = ({}) => {
   return <div>StatsContainer</div>;
 };
 
