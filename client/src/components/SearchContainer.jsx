@@ -14,8 +14,7 @@ const SearchContainer = () => {
   const debounce = (onChange) => {
     return (e) => {
       const form = e.currentTarget.form;
-      console.log('Hello');
-      onChange();
+      onChange(form);
     };
   };
   return (
@@ -28,8 +27,8 @@ const SearchContainer = () => {
             type={'search'}
             name={'search'}
             defaultValue={search}
-            onChange={debounce(() => {
-              console.log('hello');
+            onChange={debounce((form) => {
+              submit(form);
             })}
           />
 
