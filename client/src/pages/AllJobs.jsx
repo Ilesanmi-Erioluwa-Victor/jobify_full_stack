@@ -4,8 +4,13 @@ import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
 
-export const loader = async () => {
-  console.log('Hello');
+export const loader = async ({request}) => {
+  console.log(request.url)
+  const params = Object.fromEntries([
+    ...new URL(request.url).searchParams.entries()
+  ])
+
+  console.log(params)
   try {
     const { data } = await customFetch.get('/jobs');
     return { data };
