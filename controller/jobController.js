@@ -63,22 +63,33 @@ export const showStats = async (req, res, next) => {
     declined: stats.declined || 0,
   };
 
-  let monthlyApplication = [
+  let monthlyApplication = await Job.aggregate([
+    { $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } },
     {
-      date: 'May 23',
-      count: 12,
+      $group: {
+        _id: { year: { $year: '$createdAt' }, month: { $month: '$createdAt' } },
+        count: { $sum: 1 },
+      },
     },
+  ]);
 
-    {
-      date: 'Jun 23',
-      count: 9,
-    },
+  console.log(monthlyApplication);
+  // let monthlyApplication = [
+  //   {
+  //     date: 'May 23',
+  //     count: 12,
+  //   },
 
-    {
-      date: 'Jul 23',
-      count: 3,
-    },
-  ];
+  //   {
+  //     date: 'Jun 23',
+  //     count: 9,
+  //   },
+
+  //   {
+  //     date: 'Jul 23',
+  //     count: 3,
+  //   },
+  // ];
 
   res.status(StatusCodes.OK).json({
     status: 'success',
