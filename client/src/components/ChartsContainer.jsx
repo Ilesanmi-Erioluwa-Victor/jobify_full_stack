@@ -1,5 +1,12 @@
+import { useState } from "react"
 
-const ChartsContainer = () => {
+import BarChat from "./BarChart"
+
+import AreaChat from "./AreaChart"
+
+import Wrapper from "assets/wrappers/ChartsContainer"
+
+const ChartsContainer = ({data}) => {
   return (
     <div>
     ChartsContainer      
