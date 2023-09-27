@@ -8,8 +8,14 @@ const PageBtnContainer = () => {
     data: { numOfPages, currentPage },
   } = useAllJobsContext();
 
- 
-  return <h1>PageBtnContainer</h1>;
+  return (
+    <Wrapper>
+      <button className='btn  btn-prev'>
+        <HiChevronDoubleLeft />
+        prev
+      </button>
+    </Wrapper>
+  );
 };
 
 export default PageBtnContainer;
