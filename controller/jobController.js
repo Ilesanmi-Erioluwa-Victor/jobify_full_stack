@@ -22,7 +22,13 @@ export const createJob = async (req, res, next) => {
 };
 
 export const getJob = async (req, res, next) => {
-  const job = await Job.findById(req.params.id);
+  const { search } = req.query
+
+  const queryObject = {
+
+  }
+
+  const job = await Job.find(queryObject);
 
   res.json({ status: 'success', message: 'ok', data: job });
 };
