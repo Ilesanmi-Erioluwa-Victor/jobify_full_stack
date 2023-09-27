@@ -53,17 +53,14 @@ export const showStats = async (req, res, next) => {
 
   stats = stats.reduce((acc, curr) => {
     const { _id: title, count } = curr;
-
     acc[title] = count;
-
     return acc;
   }, {});
 
-  console.log(stats);
   const defaultStats = {
-    pending: 22,
-    interview: 11,
-    declined: 4,
+    pending: stats.pending || 0,
+    interview: stats.interview || 0,
+    declined: stats.declined || 0,
   };
 
   let monthlyApplication = [
