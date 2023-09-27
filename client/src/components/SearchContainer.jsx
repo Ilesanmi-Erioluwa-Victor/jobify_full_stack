@@ -29,6 +29,13 @@ const SearchContainer = () => {
             list={['all', Object.values(JOB_TYPE)]}
             defaultValue='all'
           />
+
+          <FormRowSelect
+            labelText={'job type'}
+            name={'sort'}
+            list={[...Object.values(JOB_SORT_BY)]}
+            defaultValue='newest'
+          />
         </div>
       </Form>
     </Wrapper>
