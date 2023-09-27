@@ -12,12 +12,12 @@ const PageBtnContainer = () => {
     return index + 1;
   });
 
-  const { search, pathname } = useLocation()
+  const { search, pathname } = useLocation();
 
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const handlePageChange = (pageNumber) => {
-
+    const searchParams = new URLSearchParams(search)
   };
   return (
     <Wrapper>
