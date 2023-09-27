@@ -24,7 +24,7 @@ const BarChat = ({ data }) => {
         <Tooltip />
         <Bar
           dataKey={'count'}
-          fill='#2cb1c'
+          fill='#2cb1bc'
           barSize={75}
         />
       </BarChart>
