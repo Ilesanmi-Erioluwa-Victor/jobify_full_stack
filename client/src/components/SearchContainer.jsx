@@ -8,8 +8,13 @@ const SearchContainer = () => {
   const { searchValues } = useAllJobsContext();
 
   const { search, jobStatus, jobType, sort } = searchValues;
-  const submit = useSubmit();
 
+  const submit = useSubmit();
+  const debounce = () => {
+    return () => {
+      console.log('Hello');
+    };
+  };
   return (
     <Wrapper>
       <Form className='form'>
