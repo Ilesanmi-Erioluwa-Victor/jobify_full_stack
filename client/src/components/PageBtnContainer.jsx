@@ -21,6 +21,18 @@ const PageBtnContainer = () => {
     searchParams.set('page', pageNumber);
     navigate(`${pathname}?${searchParams.toString()}`);
   };
+
+  const addPageButton = ({ pageNumber, activeClass }) => {
+    return (
+      <button
+        className={`btn page-btn ${pageNumber === currentPage && 'active'}`}
+        key={pageNumber}
+        onClick={() => handlePageChange(pageNumber)}
+      >
+        {pageNumber}
+      </button>
+    );
+  }
   return (
     <Wrapper>
       <button
@@ -37,17 +49,7 @@ const PageBtnContainer = () => {
 
       <div className='btn-container'>
         {pages.map((pageNumber) => {
-          return (
-            <button
-              className={`btn page-btn ${
-                pageNumber === currentPage && 'active'
-              }`}
-              key={pageNumber}
-              onClick={() => handlePageChange(pageNumber)}
-            >
-              {pageNumber}
-            </button>
-          );
+          
         })}
       </div>
 
