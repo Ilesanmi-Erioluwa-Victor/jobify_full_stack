@@ -17,9 +17,9 @@ const ChartsContainer = ({ data }) => {
         onClick={setBarChart(!barChart)}
       >
         {barChart ? 'Area Chart' : 'Bar Chart'}
-          </button>
-          
-          {barChart ? <BarChat data={data}/>}
+      </button>
+
+      {barChart ? <BarChat data={data} /> : <AreaChat data={data} />}
     </Wrapper>
   );
 };
