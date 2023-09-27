@@ -11,7 +11,7 @@ const SearchContainer = () => {
 
   const submit = useSubmit();
 
-  const debounce = ({ onChange }) => {
+  const debounce = (onChange) => {
     return (e) => {
       const form = e.currentTarget.form;
       console.log('Hello');
