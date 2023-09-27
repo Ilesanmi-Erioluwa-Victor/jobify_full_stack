@@ -17,15 +17,6 @@ const Job = ({
 }) => {
   const date = day(createdAt).format('MMM Do, YYYY');
 
-  console.log(
-    _id,
-    company,
-    createdAt,
-    jobLocation,
-    jobStatus,
-    jobType,
-    position
-  );
   return (
     <Wrapper>
       <header>
@@ -55,7 +46,9 @@ const Job = ({
             text={jobType}
           />
 
-          <div className={`status ${jobStatus}`}>{!jobStatus ? "default" : jobStatus}</div>
+          <div className={`status ${jobStatus}`}>
+            {!jobStatus ? 'default' : jobStatus}
+          </div>
           <footer className='actions'>
             <Link
               className='btn edit-btn'

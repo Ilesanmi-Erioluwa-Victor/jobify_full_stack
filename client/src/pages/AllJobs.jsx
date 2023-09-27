@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { customFetch } from 'utils/CustomFetch';
 
 export const loader = async () => {
+  console.log('Hello');
   try {
     const { data } = await customFetch.get('/jobs');
     return { data };
@@ -17,7 +18,6 @@ const AllJobsContext = createContext();
 
 const AllJobs = () => {
   const { data } = useLoaderData();
-  console.log(data);
   return (
     <AllJobsContext.Provider value={{ data }}>
       <SearchContainer />
