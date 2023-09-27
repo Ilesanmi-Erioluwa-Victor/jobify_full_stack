@@ -54,11 +54,12 @@ export const showStats = async (req, res, next) => {
   stats = stats.reduce((acc, curr) => {
     const { _id: title, count } = curr;
 
-    acc[title] = count
+    acc[title] = count;
 
     return acc;
   }, {});
 
+  console.log(stats);
   const defaultStats = {
     pending: 22,
     interview: 11,
