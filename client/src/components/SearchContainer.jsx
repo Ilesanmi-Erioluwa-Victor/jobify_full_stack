@@ -11,10 +11,11 @@ const SearchContainer = () => {
 
   const submit = useSubmit();
 
-  const debounce = ({onChange}) => {
+  const debounce = ({ onChange }) => {
     return (e) => {
       const form = e.currentTarget.form;
       console.log('Hello');
+      onChange();
     };
   };
   return (
@@ -28,7 +29,7 @@ const SearchContainer = () => {
             name={'search'}
             defaultValue={search}
             onChange={debounce(() => {
-              console.log("hello")
+              console.log('hello');
             })}
           />
 
