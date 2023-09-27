@@ -17,7 +17,9 @@ const PageBtnContainer = () => {
   const navigate = useNavigate();
 
   const handlePageChange = (pageNumber) => {
-    const searchParams = new URLSearchParams(search)
+    const searchParams = new URLSearchParams(search);
+    searchParams.set('page', pageNumber);
+    navigate(`${pathname}?${searchParams.toString()}`);
   };
   return (
     <Wrapper>
