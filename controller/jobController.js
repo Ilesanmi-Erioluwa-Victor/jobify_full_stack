@@ -72,11 +72,18 @@ export const showStats = async (req, res, next) => {
       },
     },
 
-    { $sort: { "_id.year": -1, "_id.month": -1 } },
-    {$limit : 6}
+    { $sort: { '_id.year': -1, '_id.month': -1 } },
+    { $limit: 6 },
   ]);
 
-  console.log(monthlyApplication);
+  monthlyApplication = monthlyApplication.map((item) => {
+    const {
+      _id: { year, month },
+      count,
+    } = item;
+
+    return { count}
+  });
   // let monthlyApplication = [
   //   {
   //     date: 'May 23',
