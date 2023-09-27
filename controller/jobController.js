@@ -47,7 +47,7 @@ export const deleteJob = async (req, res, next) => {
 
 export const showStats = async (req, res, next) => {
   let stats = await Job.aggregate([
-    
+    {$match : {createdBy : new mongoose.Types.ObjectId(req.user.userId)}}
   ])
   
   
