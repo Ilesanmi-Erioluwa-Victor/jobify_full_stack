@@ -52,7 +52,9 @@ const PageBtnContainer = () => {
         prev
       </button>
 
-      <div className='btn-container'>{pages.map((pageNumber) => {})}</div>
+      <div className='btn-container'>
+        {renderPageButton}
+      </div>
 
       <button
         className='btn  next-btn'
