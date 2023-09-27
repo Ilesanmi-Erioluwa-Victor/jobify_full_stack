@@ -36,6 +36,9 @@ const PageBtnContainer = () => {
 
   const renderPageButton = () => {
     const pageButtons = [];
+    pageButtons.push(
+      addPageButton({ pageNumber: 1, activeClass: currentPage === 1 })
+    );
     return pageButtons;
   };
   return (
@@ -52,9 +55,7 @@ const PageBtnContainer = () => {
         prev
       </button>
 
-      <div className='btn-container'>
-        {renderPageButton}
-      </div>
+      <div className='btn-container'>{renderPageButton()}</div>
 
       <button
         className='btn  next-btn'
