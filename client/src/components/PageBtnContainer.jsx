@@ -12,6 +12,9 @@ const PageBtnContainer = () => {
     return index + 1;
   });
 
+  const handlePageChange = (pageNumber) => {
+    
+  }
   return (
     <Wrapper>
       <button className='btn  prev-btn'>
@@ -27,6 +30,7 @@ const PageBtnContainer = () => {
                 pageNumber === currentPage && 'active'
               }`}
               key={pageNumber}
+              onClick={() => handlePageChange(pageNumber)}
             >
               {pageNumber}
             </button>
