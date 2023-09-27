@@ -14,6 +14,13 @@ const PageBtnContainer = () => {
         <HiChevronDoubleLeft />
         prev
       </button>
+
+      <div className='btn-container'></div>
+
+      <button className='btn  btn-next'>
+        <HiChevronDoubleRight />
+        next
+      </button>
     </Wrapper>
   );
 };
