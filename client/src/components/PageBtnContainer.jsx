@@ -8,8 +8,7 @@ const PageBtnContainer = () => {
     data: { numOfPages, currentPage },
   } = useAllJobsContext();
 
-  const pages = Array.from({length : numOfPages})
-  console.log(pages)
+  const pages = Array.from({ length: numOfPages });
   return (
     <Wrapper>
       <button className='btn  prev-btn'>
