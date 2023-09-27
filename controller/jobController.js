@@ -4,10 +4,11 @@ import mongoose from 'mongoose';
 import day from 'dayjs';
 
 export const getAllJobs = async (req, res, next) => {
-  const { search } = req.query;
+  const { search, jobStatus } = req.query;
 
   const queryObject = {
     createdBy: req.user.userId,
+    jobStatus,
   };
 
   if (search) {
