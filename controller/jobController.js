@@ -46,6 +46,15 @@ export const deleteJob = async (req, res, next) => {
 };
 
 export const showStats = async (req, res, next) => {
-  
-  res.send('stats');
+  const defaultStats = {
+    pending : 22,
+    interview: 11,
+    declined : 4
+  }
+
+  res.status(StatusCodes.OK).json({
+    status: "success",
+    message : "ok",
+    data : defaultStats 
+  });
 };
