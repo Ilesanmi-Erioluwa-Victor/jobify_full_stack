@@ -5,6 +5,7 @@ import { JOB_SORT_BY, JOB_STATUS, JOB_TYPE } from '../../../utils/constant';
 import { useAllJobsContext } from 'pages/AllJobs';
 
 const SearchContainer = () => {
+  const { searchValues } = useAllJobsContext();
   const submit = useSubmit();
 
   return (
