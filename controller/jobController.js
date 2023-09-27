@@ -63,7 +63,7 @@ export const showStats = async (req, res, next) => {
     declined: stats.declined || 0,
   };
 
-  let monthlyApplication = await Job.aggregate([
+  let monthlyApplications = await Job.aggregate([
     { $match: { createdBy: new mongoose.Types.ObjectId(req.user.userId) } },
     {
       $group: {
@@ -76,7 +76,7 @@ export const showStats = async (req, res, next) => {
     { $limit: 10 },
   ]);
 
-  monthlyApplication = monthlyApplication
+  monthlyApplications = monthlyApplications
     .map((item) => {
       const {
         _id: { year, month },
@@ -96,6 +96,6 @@ export const showStats = async (req, res, next) => {
     status: 'success',
     message: 'ok',
     defaultStats,
-    monthlyApplication,
+    monthlyApplications,
   });
 };

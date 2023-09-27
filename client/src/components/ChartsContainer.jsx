@@ -9,12 +9,13 @@ import Wrapper from 'assets/wrappers/ChartsContainer';
 const ChartsContainer = ({ data }) => {
   const [barChart, setBarChart] = useState(true);
 
+  console.log(data);
   return (
     <Wrapper>
       <h4>Monthly Applications</h4>
       <button
         type='button'
-        onClick={setBarChart(!barChart)}
+        onClick={() => setBarChart(!barChart)}
       >
         {barChart ? 'Area Chart' : 'Bar Chart'}
       </button>
