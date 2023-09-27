@@ -25,14 +25,19 @@ const PageBtnContainer = () => {
   const addPageButton = ({ pageNumber, activeClass }) => {
     return (
       <button
-        className={`btn page-btn ${pageNumber === currentPage && 'active'}`}
+        className={`btn page-btn ${activeClass && 'active'}`}
         key={pageNumber}
         onClick={() => handlePageChange(pageNumber)}
       >
         {pageNumber}
       </button>
     );
-  }
+  };
+
+  const renderPageButton = () => {
+    const pageButtons = [];
+    return pageButtons;
+  };
   return (
     <Wrapper>
       <button
@@ -47,11 +52,7 @@ const PageBtnContainer = () => {
         prev
       </button>
 
-      <div className='btn-container'>
-        {pages.map((pageNumber) => {
-          
-        })}
-      </div>
+      <div className='btn-container'>{pages.map((pageNumber) => {})}</div>
 
       <button
         className='btn  next-btn'
