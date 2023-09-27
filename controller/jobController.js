@@ -4,7 +4,17 @@ import mongoose from 'mongoose';
 import day from 'dayjs';
 
 export const getAllJobs = async (req, res, next) => {
-  const jobs = await Job.find({ createdBy: req.user.userId });
+  const { search } = req.query;
+
+  const queryObject = {
+    createdBy: req.user.userId,
+  };
+
+  if (search) {
+    queryObject.position = req.query.search;
+  }
+
+  const jobs = await Job.find(queryObject);
   res.status(StatusCodes.OK).json({
     length: jobs.length,
     status: 'success',
@@ -22,13 +32,7 @@ export const createJob = async (req, res, next) => {
 };
 
 export const getJob = async (req, res, next) => {
-  const { search } = req.query
-
-  const queryObject = {
-
-  }
-
-  const job = await Job.find(queryObject);
+  const job = await Job.findById(req.params.id);
 
   res.json({ status: 'success', message: 'ok', data: job });
 };
