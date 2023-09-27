@@ -73,33 +73,24 @@ export const showStats = async (req, res, next) => {
     },
 
     { $sort: { '_id.year': -1, '_id.month': -1 } },
-    { $limit: 6 },
+    { $limit: 10 },
   ]);
 
-  monthlyApplication = monthlyApplication.map((item) => {
-    const {
-      _id: { year, month },
-      count,
-    } = item;
+  monthlyApplication = monthlyApplication
+    .map((item) => {
+      const {
+        _id: { year, month },
+        count,
+      } = item;
 
-    return { count}
-  });
-  // let monthlyApplication = [
-  //   {
-  //     date: 'May 23',
-  //     count: 12,
-  //   },
+      const date = day()
+        .month(month - 1)
+        .year(year)
+        .format('MMM YY');
 
-  //   {
-  //     date: 'Jun 23',
-  //     count: 9,
-  //   },
-
-  //   {
-  //     date: 'Jul 23',
-  //     count: 3,
-  //   },
-  // ];
+      return { date, count };
+    })
+    .reverse();
 
   res.status(StatusCodes.OK).json({
     status: 'success',
