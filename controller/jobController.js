@@ -39,6 +39,8 @@ export const getAllJobs = async (req, res, next) => {
 
   const sortKey = sortOption[sort] || sortOption.newest;
 
+const page = Number(req.query.page) || 1
+
   const totalJobs = await Job.countDocuments(queryObject);
 
   const jobs = await Job.find(queryObject).sort(sortKey).skip(1).limit(2);
