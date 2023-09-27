@@ -10,8 +10,9 @@ const SearchContainer = () => {
   const { search, jobStatus, jobType, sort } = searchValues;
 
   const submit = useSubmit();
-  const debounce = () => {
-    return () => {
+  const debounce = ({onChange}) => {
+    return (e) => {
+      const from = e.currentTarget.form;
       console.log('Hello');
     };
   };
@@ -25,9 +26,7 @@ const SearchContainer = () => {
             type={'search'}
             name={'search'}
             defaultValue={search}
-            onChange={(e) => {
-              submit(e.currentTarget.form);
-            }}
+            onChange={debounce()}
           />
 
           <FormRowSelect
