@@ -46,6 +46,11 @@ export const deleteJob = async (req, res, next) => {
 };
 
 export const showStats = async (req, res, next) => {
+  let stats = await Job.aggregate([
+    
+  ])
+  
+  
   const defaultStats = {
     pending: 22,
     interview: 11,
