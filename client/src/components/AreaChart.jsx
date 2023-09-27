@@ -18,7 +18,8 @@ const AreaChat = ({ data }) => {
         data={data}
         margin={{ top: 50 }}
       >
-        {' '}
+        <CartesianGrid strokeDasharray={'3 3'} />
+        <XAxis dataKey={'date'} />
       </AreaChart>
     </ResponsiveContainer>
   );
