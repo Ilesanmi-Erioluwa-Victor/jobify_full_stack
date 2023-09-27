@@ -41,14 +41,15 @@ const PageBtnContainer = () => {
     );
 
     // current page
-
+    if (currentPage !== 1 && currentPage !== numOfPages) {
       pageButtons.push(
         addPageButton({
           pageNumber: currentPage,
           activeClass: true,
         })
-    );
-    
+      );
+    }
+
     pageButtons.push(
       addPageButton({
         pageNumber: numOfPages,
