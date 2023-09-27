@@ -19,14 +19,14 @@ const SearchContainer = () => {
           <FormRowSelect
             labelText={'job status'}
             name={'jobStatus'}
-            list={['all', Object.values(JOB_STATUS)]}
+            list={['all', ...Object.values(JOB_STATUS)]}
             defaultValue='all'
           />
 
           <FormRowSelect
             labelText={'job type'}
             name={'jobType'}
-            list={['all', Object.values(JOB_TYPE)]}
+            list={['all', ...Object.values(JOB_TYPE)]}
             defaultValue='all'
           />
 
