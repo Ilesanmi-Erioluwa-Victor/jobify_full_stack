@@ -39,8 +39,14 @@ const PageBtnContainer = () => {
     pageButtons.push(
       addPageButton({ pageNumber: 1, activeClass: currentPage === 1 })
     );
+
+    pageButtons.push(
+      addPageButton({ pageNumber: numOfPages, activeClass: currentPage === numOfPages })
+    );
+
     return pageButtons;
   };
+
   return (
     <Wrapper>
       <button
