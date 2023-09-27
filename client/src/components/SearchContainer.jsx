@@ -31,11 +31,17 @@ const SearchContainer = () => {
           />
 
           <FormRowSelect
-            labelText={'job type'}
             name={'sort'}
             list={[...Object.values(JOB_SORT_BY)]}
             defaultValue='newest'
           />
+          <Link
+            to={'dashboard/all-jobs'}
+            className='btn form-btn delete-btn'
+          >
+            Reset Search Values
+          </Link>
+          <SubmitBtn formBtn />
         </div>
       </Form>
     </Wrapper>
