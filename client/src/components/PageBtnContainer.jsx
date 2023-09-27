@@ -59,6 +59,15 @@ const PageBtnContainer = () => {
       );
     }
 
+    if (currentPage !== numOfPages && currentPage !== numOfPages - 1) {
+      pageButtons.push(
+        addPageButton({
+          pageNumber: currentPage + 1,
+          activeClass: false,
+        })
+      );
+    }
+
     pageButtons.push(
       addPageButton({
         pageNumber: numOfPages,
