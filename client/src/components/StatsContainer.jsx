@@ -11,6 +11,22 @@ const StatsContainer = ({ defaultStats }) => {
       color: '#f59e0b',
       bcg: '#fef3c7',
     },
+
+    {
+      title: 'interview scheduled ',
+      count: defaultStats?.interview || 0,
+      icon: <FaCalendarCheck />,
+      color: '#647acb',
+      bcg: '#e0e8f9',
+    },
+
+    {
+      title: 'jobs declined',
+      count: defaultStats?.declined || 0,
+      icon: <FaBug />,
+      color: '#d66a6a',
+      bcg: '#fef3c7',
+    },
   ];
   return (
     <Wrapper>
