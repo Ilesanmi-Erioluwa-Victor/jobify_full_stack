@@ -9,6 +9,10 @@ const SearchContainer = () => {
     <Wrapper>
       <Form className='form'>
         <h5 className='form-title'>search form</h5>
+       
+        <div className="form-center">
+          <FormRow type={"search"} name={"search"} defaultValue={"a"}/>
+        </div>
       </Form>
     </Wrapper>
   );
