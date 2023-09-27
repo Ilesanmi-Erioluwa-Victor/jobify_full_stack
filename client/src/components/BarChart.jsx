@@ -19,6 +19,14 @@ const BarChat = ({ data }) => {
         margin={{ top: 50 }}
       >
         <CartesianGrid strokeDasharray={'3 3'} />
+        <XAxis dataKey={'date'} />
+        <YAxis allowDecimals={false} />
+        <Tooltip />
+        <Bar
+          dataKey={'count'}
+          fill='#2cb1c'
+          barSize={75}
+        />
       </BarChart>
     </ResponsiveContainer>
   );
