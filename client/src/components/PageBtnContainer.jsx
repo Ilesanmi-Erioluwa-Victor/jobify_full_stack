@@ -81,6 +81,19 @@ const PageBtnContainer = () => {
       );
     }
 
+    // after dot
+    if (currentPage < numOfPages - 2) {
+        pageButtons.push(
+          <span
+            className='page-btn dots'
+            key={'dots-1'}
+          >
+            {' '}
+            ...{' '}
+          </span>
+        );
+    }
+
     pageButtons.push(
       addPageButton({
         pageNumber: numOfPages,
