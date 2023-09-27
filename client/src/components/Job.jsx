@@ -29,10 +29,12 @@ const Job = ({
   return (
     <Wrapper>
       <header>
-        <div className='main-icon'>{company.charAt(0)}</div>
+        <div className='main-icon'>
+          {!company ? 'Default' : company.charAt(0)}
+        </div>
         <div className='info'>
           <h5>{position}</h5>
-          <p>{company}</p>
+          <p> {!company ? 'Default' : company.charAt(0)}</p>
         </div>
       </header>
 
@@ -53,7 +55,7 @@ const Job = ({
             text={jobType}
           />
 
-          <div className={`status ${jobStatus}`}>{jobStatus}</div>
+          <div className={`status ${jobStatus}`}>{!jobStatus ? "default" : jobStatus}</div>
           <footer className='actions'>
             <Link
               className='btn edit-btn'
