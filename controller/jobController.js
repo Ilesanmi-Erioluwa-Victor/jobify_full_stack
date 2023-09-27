@@ -41,7 +41,7 @@ export const getAllJobs = async (req, res, next) => {
 
   const totalJobs = await Job.countDocuments(queryObject);
 
-  const jobs = await Job.find(queryObject).sort(sortKey).limit(1);
+  const jobs = await Job.find(queryObject).sort(sortKey).skip(1).limit(2);
 
   res.status(StatusCodes.OK).json({
     length: jobs.length,
