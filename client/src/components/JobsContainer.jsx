@@ -5,8 +5,9 @@ import PageBtnContainer from './PageBtnContainer';
 
 const JobsContainer = () => {
   const { data } = useAllJobsContext();
-  const { jobs, totalJobs, numOfPages } = data;
-
+  const { totalJobs, numOfPages } = data;
+  const dataResponse = data.data;
+  console.log(data, data, totalJobs, numOfPages);
   if (!data.data.length) {
     return (
       <Wrapper>
@@ -17,7 +18,7 @@ const JobsContainer = () => {
   return (
     <Wrapper>
       <h5>
-        {totalJobs} job{jobs.length > 1 && 's'} found
+        {totalJobs} job{dataResponse?.length > 1 && 's'} found
       </h5>
       <div className='jobs'>
         {data.data.map((job) => {
