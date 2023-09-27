@@ -5,6 +5,8 @@ import { JOB_SORT_BY, JOB_STATUS, JOB_TYPE } from '../../../utils/constant';
 import { useAllJobsContext } from 'pages/AllJobs';
 
 const SearchContainer = () => {
+  const submit = useSubmit();
+
   return (
     <Wrapper>
       <Form className='form'>
@@ -15,7 +17,11 @@ const SearchContainer = () => {
             type={'search'}
             name={'search'}
             defaultValue={'a'}
+            onChange={(e) => {
+              submit(e.currentTarget.form);
+            }}
           />
+
           <FormRowSelect
             labelText={'job status'}
             name={'jobStatus'}
@@ -36,7 +42,7 @@ const SearchContainer = () => {
             defaultValue='newest'
           />
           <Link
-            to={'dashboard/all-jobs'}
+            to={'/dashboard/all-jobs'}
             className='btn form-btn delete-btn'
           >
             Reset Search Values
