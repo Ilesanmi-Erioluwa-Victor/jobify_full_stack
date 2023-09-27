@@ -28,6 +28,7 @@ const JobsContainer = () => {
           );
         })}
       </div>
+      {numOfPages > 1}
     </Wrapper>
   );
 };
