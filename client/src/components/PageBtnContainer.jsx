@@ -40,6 +40,19 @@ const PageBtnContainer = () => {
       addPageButton({ pageNumber: 1, activeClass: currentPage === 1 })
     );
 
+    // dots
+    if (currentPage > 3) {
+      pageButtons.push(
+        <span
+          className='page-btn dots'
+          key={'dots-1'}
+        >
+          {' '}
+          ...{' '}
+        </span>
+      );
+    }
+
     if (currentPage !== 1 && currentPage !== 2) {
       pageButtons.push(
         addPageButton({
