@@ -11,7 +11,11 @@ export const getAllJobs = async (req, res, next) => {
   };
 
   if (search) {
-    queryObject.position = req.query.search;
+    queryObject.$or = [
+      {
+        position: { $regex: search, $options: 'i' },
+      },
+    ];
   }
 
   const jobs = await Job.find(queryObject);
