@@ -29,32 +29,27 @@ const Register = () => {
         <FormRow
           type={'text'}
           name={'name'}
-          defaultValue={'Erioluwa'}
         />
 
         <FormRow
           type={'text'}
           name={'lastName'}
           labelText={'last name'}
-          defaultValue={'Ilesnmi'}
         />
 
         <FormRow
           type={'text'}
           name={'location'}
-          defaultValue={'earth'}
         />
 
         <FormRow
           type={'email'}
           name={'email'}
-          defaultValue={'ericjay1452@gmail.com'}
         />
 
         <FormRow
           type={'password'}
           name={'password'}
-          defaultValue={'12345'}
         />
 
         <SubmitBtn />
