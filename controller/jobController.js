@@ -22,13 +22,13 @@ export const getAllJobs = async (req, res, next) => {
     ];
   }
 
-  if (jobStatus && jobStatus !== "all") {
-    queryObject.jobStatus = jobStatus
+  if (jobStatus && jobStatus !== 'all') {
+    queryObject.jobStatus = jobStatus;
   }
 
-    if (jobType && jobType !== 'all') {
-      queryObject.jobType = jobType;
-    }
+  if (jobType && jobType !== 'all') {
+    queryObject.jobType = jobType;
+  }
 
   const jobs = await Job.find(queryObject);
   res.status(StatusCodes.OK).json({
