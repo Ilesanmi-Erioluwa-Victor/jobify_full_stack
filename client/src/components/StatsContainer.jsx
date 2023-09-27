@@ -1,4 +1,5 @@
-import { FaSuitcaseRolling, FaCalendarCheck } from 'react-icons/fa';
+import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from 'react-icons/fa';
+import Wrapper from 'assets/wrappers/StatsContainer';
 
 const StatsContainer = ({ defaultStats }) => {
   const stats = [
@@ -10,7 +11,7 @@ const StatsContainer = ({ defaultStats }) => {
       bcg: '#fef3c7',
     },
   ];
-  return <div>StatsContainer</div>;
+  return <Wrapper>StatsContainer</Wrapper>;
 };
 
 export default StatsContainer;
