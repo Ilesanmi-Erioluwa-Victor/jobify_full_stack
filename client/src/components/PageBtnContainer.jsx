@@ -8,16 +8,17 @@ const PageBtnContainer = () => {
     data: { numOfPages, currentPage },
   } = useAllJobsContext();
 
+  
   return (
     <Wrapper>
-      <button className='btn  btn-prev'>
+      <button className='btn  prev-btn'>
         <HiChevronDoubleLeft />
         prev
       </button>
 
       <div className='btn-container'></div>
 
-      <button className='btn  btn-next'>
+      <button className='btn  next-btn'>
         next
         <HiChevronDoubleRight />
       </button>
