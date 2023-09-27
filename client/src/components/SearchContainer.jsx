@@ -12,6 +12,8 @@ const SearchContainer = () => {
        
         <div className="form-center">
           <FormRow type={"search"} name={"search"} defaultValue={"a"}/>
+          <FormRowSelect labelText={"job status"} name={"jobStatus"} list={}/>
+        
         </div>
       </Form>
     </Wrapper>
