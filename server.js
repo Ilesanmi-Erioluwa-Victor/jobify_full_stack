@@ -25,7 +25,7 @@ process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.static(path.resolve(__dirname, './client/dist')));
 app.use(cookieParser());
 app.use(express.json());
 
@@ -40,7 +40,7 @@ app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', authenticateUser, userRoute);
 
 app.get('*', (req, res, next) => {
-  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
 });
 
 app.use('*', (req, res, next) => {
