@@ -1,7 +1,7 @@
 import { useState, createContext, useContext } from 'react';
 import { Outlet, useLoaderData, useNavigate, redirect } from 'react-router';
 import Wrapper from 'assets/wrappers/Dashboard';
-import { SmallSidebar, BigSidebar, Navbar } from 'components';
+import { SmallSidebar, BigSidebar, Navbar } from '../components';
 import { customFetch } from 'utils/CustomFetch';
 import { toast } from 'react-toastify';
 
