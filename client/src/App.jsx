@@ -15,19 +15,19 @@ import {
   Stats,
 } from './pages';
 
-import { action as registerAction } from 'pages/Register';
-import { action as loginAction } from 'pages/Login';
-import { Loader as DashboardLoader } from 'pages/DashboardLayout';
-import { action as addJobAction } from 'pages/AddJob';
-import { loader as allJosLoader } from 'pages/AllJobs';
+import { action as registerAction } from './pages/Register';
+import { action as loginAction } from './pages/Login';
+import { Loader as DashboardLoader } from './pages/DashboardLayout';
+import { action as addJobAction } from './pages/AddJob';
+import { loader as allJosLoader } from './pages/AllJobs';
 import {
   action as editJobAction,
   loader as editJobLoader,
-} from 'pages/EditJob';
-import { action as deleteJobAction } from 'pages/DeleteJob';
-import { loader as adminLoader } from 'pages/Admin';
-import { loader as statsLoader } from 'pages/Stats';
-import { action as profileAction } from 'pages/Profile';
+} from './pages/EditJob';
+import { action as deleteJobAction } from './pages/DeleteJob';
+import { loader as adminLoader } from './pages/Admin';
+import { loader as statsLoader } from './pages/Stats';
+import { action as profileAction } from './pages/Profile';
 
 const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem('darkTheme') === 'true';

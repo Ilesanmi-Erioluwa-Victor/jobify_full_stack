@@ -1,8 +1,8 @@
-import Wrapper from 'assets/wrappers/DashboardFormPage';
-import { FormRow, SubmitBtn } from 'components';
+import Wrapper from '../assets/wrappers/DashboardFormPage';
+import { FormRow, SubmitBtn } from '../components';
 import { Form, useOutletContext } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { customFetch } from 'utils/CustomFetch';
+import { customFetch } from '../utils/CustomFetch';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();

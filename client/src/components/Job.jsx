@@ -3,7 +3,7 @@ import day from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import JobInfo from './JobInfo';
 import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
-import Wrapper from 'assets/wrappers/Job';
+import Wrapper from '../assets/wrappers/Job';
 day.extend(advancedFormat);
 
 const Job = ({

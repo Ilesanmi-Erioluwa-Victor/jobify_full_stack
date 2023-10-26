@@ -4,7 +4,7 @@ import BarChat from './BarChart';
 
 import AreaChat from './AreaChart';
 
-import Wrapper from 'assets/wrappers/ChartsContainer';
+import Wrapper from '../assets/wrappers/ChartsContainer';
 
 const ChartsContainer = ({ data }) => {
   const [barChart, setBarChart] = useState(true);

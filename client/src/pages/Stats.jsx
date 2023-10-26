@@ -1,6 +1,6 @@
-import { ChartsContainer, StatsContainer } from 'components';
+import { ChartsContainer, StatsContainer } from '../components';
 import { useLoaderData } from 'react-router-dom';
-import { customFetch } from 'utils/CustomFetch';
+import { customFetch } from '../utils/CustomFetch';
 
 export const loader = async () => {
   try {
