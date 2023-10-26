@@ -40,7 +40,7 @@ app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', authenticateUser, userRoute);
 
 app.get('*', (req, res, next) => {
-  res.sendFile(path.resolve(__dirname, './public', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
 });
 
 app.use('*', (req, res, next) => {
