@@ -71,8 +71,10 @@ const router = createBrowserRouter([
 
       {
         path: 'dashboard',
-        element: <DashboardLayout isDarkThemeEnabled={isDarkThemeEnabled} />,
-        loader: DashboardLoader,
+        element: <DashboardLayout isDarkThemeEnabled={isDarkThemeEnabled}
+        queryClient={queryClient}
+        />,
+        loader: DashboardLoader(queryClient),
         children: [
           {
             path: 'admin',
@@ -110,7 +112,7 @@ const router = createBrowserRouter([
           {
             path: 'stats',
             element: <Stats />,
-            loader: statsLoader,
+            loader: statsLoader(queryClient),
             errorElement: <ErrorElement />
           },
 

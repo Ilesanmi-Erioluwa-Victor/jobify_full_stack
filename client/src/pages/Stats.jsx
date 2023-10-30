@@ -3,20 +3,24 @@ import { useLoaderData } from 'react-router-dom';
 import { customFetch } from '../utils/CustomFetch';
 import { useQuery } from '@tanstack/react-query';
 
-export const loader = async () => {
+const statsQuery = {
+  queryKey: ['stats'],
+  queryFn: async () => {
+    const response = await customFetch.get('/jobs/stats');
+    return response.data;
+  },
+};
+
+export const loader = (queryClient) => async () => {
+  const data = await queryClient.ensureQueryData(statsQuery);
+
   return null;
 };
+
 const Stats = () => {
-  const { isLoading, isError, data } = useQuery({
-    queryKey: ['stats'],
-    queryFn: () => customFetch.get('/jobs/stats'),
-  });
+  const { data } = useQuery(statsQuery);
 
-  if (isLoading) return <h4>Loading....</h4>;
-
-  if (isError) return <h4>Error....</h4>;
-
-  const { defaultStats, monthlyApplications } = data.data;
+  const { defaultStats, monthlyApplications } = data;
 
   return (
     <>
