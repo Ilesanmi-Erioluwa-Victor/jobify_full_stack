@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 import {
   Outlet,
   useLoaderData,
@@ -15,12 +15,12 @@ import { useQuery } from '@tanstack/react-query';
 const userQuery = {
   queryKey: ['user'],
   queryFn: async () => {
-       const { data } = await customFetch.get('/users/current-user'); 
+    const { data } = await customFetch.get('/users/current-user');
     return data.data;
   },
 };
 
-export const Loader =(queryClient) => async () => {
+export const Loader = (queryClient) => async () => {
   try {
     return await queryClient.ensureQueryData(userQuery);
   } catch (error) {
@@ -30,13 +30,14 @@ export const Loader =(queryClient) => async () => {
 const DashboardContext = createContext();
 
 const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
-  const user
-    = useQuery(userQuery).data;
+  const user = useQuery(userQuery).data;
   const navigate = useNavigate();
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
+
+  const [isAuthError, setIsAuthError] = useState(false);
 
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
@@ -52,10 +53,26 @@ const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
   const logoutUser = async () => {
     navigate('/');
     await customFetch.get('/auth/logout');
-      queryClient.invalidateQueries();
+    queryClient.invalidateQueries();
     toast.success('Logged out successfully');
   };
 
+  customFetch.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      if (error?.response?.status === 401) {
+        setIsAuthError(true);
+      }
+      return Promise.reject(error);
+    }
+  );
+
+  useEffect(() => {
+    if (!isAuthError) return;
+    logoutUser();
+  }, [isAuthError]);
   return (
     <DashboardContext.Provider
       value={{
