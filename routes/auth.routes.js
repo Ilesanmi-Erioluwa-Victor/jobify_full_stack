@@ -10,7 +10,7 @@ const route = Router();
 
 const apiLimiter = rateLimiter({
   windowMs: 15 * 60 * 1000,
-  max: 1,
+  max: 20,
   message: {
     message: 'IP rate limit exceeded, retry in 15 minutes',
   },
