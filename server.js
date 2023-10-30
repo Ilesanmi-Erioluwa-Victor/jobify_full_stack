@@ -5,10 +5,11 @@ import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import cloudinary from 'cloudinary';
-
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
 
 dotenv.config();
 
@@ -34,6 +35,8 @@ cloudinary.config({
   api_key: process.env.CLOUD_API_KEY,
   api_secret: process.env.CLOUD_API_SECRET,
 });
+app.use(helmet());
+app.use(mongoSanitize());
 
 app.use('/api/v1/jobs', authenticateUser, jobRoute);
 app.use('/api/v1/auth', authRoute);
