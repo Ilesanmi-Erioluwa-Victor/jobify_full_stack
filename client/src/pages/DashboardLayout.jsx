@@ -32,13 +32,12 @@ const DashboardContext = createContext();
 const DashboardLayout = ({ isDarkThemeEnabled, queryClient }) => {
   const user
     = useQuery(userQuery).data;
-  console.log(user)
   const navigate = useNavigate();
   const navigation = useNavigation();
   const isPageLoading = navigation.state === 'loading';
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(isDarkThemeEnabled);
- console.log(user)
+
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
     setIsDarkTheme(newDarkTheme);

@@ -4,16 +4,29 @@ import { Form, redirect, useLoaderData } from 'react-router-dom';
 import { JOB_STATUS, JOB_TYPE } from '../../../utils/constant';
 import { toast } from 'react-toastify';
 import { customFetch } from '../utils/CustomFetch';
+import { useQuery } from '@tanstack/react-query';
 
-export const loader = async ({ params }) => {
-  try {
-    const { data } = await customFetch.get(`/jobs/${params.id}`);
-    return data;
-  } catch (error) {
-    toast.error(error?.response?.data?.msg);
-    return redirect(`/dashboard/all-jobs`);
-  }
+const singleJobQuery = (id) => {
+  return {
+    queryKey: ['job', id],
+    queryFn: async () => {
+      const { data } = await customFetch.get(`/jobs/${id}`);
+      return data;
+    },
+  };
 };
+
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    try {
+      await queryClient.ensureQueryData(singleJobQuery(params.id));
+      return params.id;
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+      return redirect(`/dashboard/all-jobs`);
+    }
+  };
 
 export const action =
   (queryClient) =>
@@ -33,7 +46,9 @@ export const action =
   };
 
 const EditJob = () => {
-  const { data } = useLoaderData();
+  const id = useLoaderData();
+  const { data } = useQuery(singleJobQuery(id));
+  const job = data.data;
 
   return (
     <Wrapper>
@@ -46,31 +61,31 @@ const EditJob = () => {
           <FormRow
             type={'text'}
             name={'position'}
-            defaultValue={data.position}
+            defaultValue={job.position}
           />
           <FormRow
             type={'text'}
             name={'company'}
-            defaultValue={data.company}
+            defaultValue={job.company}
           />
           <FormRow
             type={'text'}
             name={'jobLocation'}
             labelText={'job location'}
-            defaultValue={data.jobLocation}
+            defaultValue={job.jobLocation}
           />
 
           <FormRowSelect
             name={'jobStatus'}
             labelText={'job status'}
-            defaultValue={data.jobStatus}
+            defaultValue={job.jobStatus}
             list={Object.values(JOB_STATUS)}
           />
 
           <FormRowSelect
             name={'jobType'}
             labelText={'job type'}
-            defaultValue={data.jobType}
+            defaultValue={job.jobType}
             list={Object.values(JOB_TYPE)}
           />
           <SubmitBtn formBtn />
